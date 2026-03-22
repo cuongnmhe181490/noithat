@@ -15,7 +15,7 @@ export function MaterialCraftSection({
           <SectionHeading
             eyebrow="Vật liệu và craftsmanship"
             title="Đây là nơi thương hiệu được cảm bằng tay và ánh sáng, không phải bằng lời giới thiệu."
-            description="Section này chỉ giữ vài lớp vật liệu đủ mạnh để người xem cảm được độ tinh, thay vì biến thành một bảng thông số dài."
+            description="Chỉ giữ vài lớp vật liệu đủ mạnh để người xem cảm được độ tinh."
             align="left"
           />
         </div>
@@ -35,10 +35,10 @@ export function MaterialCraftSection({
                 <div className="flex flex-col justify-between gap-5 p-1">
                   <div className="space-y-3">
                     <p className="section-kicker">{item.tone}</p>
-                    <h3 className="font-serif text-[2.2rem] leading-none text-[var(--color-charcoal)]">
+                    <h3 className="text-[1.7rem] font-medium leading-[1.08] tracking-[-0.02em] text-[var(--color-charcoal)] md:text-[1.9rem]">
                       {item.name}
                     </h3>
-                    <p className="text-sm leading-7 text-[var(--color-muted)]">
+                    <p className="max-w-[38ch] text-sm leading-6 text-[var(--color-muted)] line-clamp-3">
                       {item.description}
                     </p>
                   </div>

@@ -38,10 +38,10 @@ export function CategoryStrip({ categories }: CategoryStripProps) {
                 <p className="text-[0.66rem] uppercase tracking-[0.24em] text-white/56">
                   {category.metric}
                 </p>
-                <h2 className="mt-3 font-serif text-[2.7rem] leading-none text-white">
+                <h2 className="mt-3 text-[2rem] font-medium leading-none tracking-[-0.02em] text-white md:text-[2.25rem]">
                   {category.title}
                 </h2>
-                <p className="mt-3 max-w-[15rem] text-sm leading-7 text-white/76">
+                <p className="mt-3 max-w-[14rem] text-sm leading-6 text-white/76 line-clamp-2">
                   {category.description}
                 </p>
               </div>

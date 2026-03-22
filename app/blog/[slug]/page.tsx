@@ -39,10 +39,10 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
     <article className="pb-24 pt-28">
       <div className="section-shell max-w-4xl">
         <span className="eyebrow">{post.category}</span>
-        <h1 className="mt-5 font-serif text-5xl leading-none md:text-7xl">
+        <h1 className="mt-5 font-serif text-5xl leading-[0.98] md:text-6xl">
           {post.title}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-muted)] md:text-lg">
+        <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-[var(--color-muted)] md:text-[1.03rem]">
           {post.excerpt}
         </p>
       </div>
@@ -57,7 +57,7 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
           />
         </div>
       </div>
-      <div className="section-shell prose-shell mt-12 max-w-3xl">
+      <div className="section-shell prose-shell mt-12 max-w-[46rem]">
         {post.content.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}

@@ -18,9 +18,9 @@ export default function Home() {
       <BrandSignalStrip />
       <CategoryStrip categories={projectCategories} />
       <ProjectsShowcase
-        title="Những dự án được chọn để người xem cảm được chiều sâu không gian trước khi đọc nhiều về nó."
+        title="Một selection ngắn để người xem muốn mở từng case study."
         eyebrow="Signature projects"
-        description="Trang chủ chỉ giữ một selection ngắn, ưu tiên ảnh lớn và lối vào rõ ràng đến từng case study."
+        description="Ít text hơn, nhiều hình hơn và một lối vào rõ ràng đến từng dự án."
         projects={projects.slice(0, 4)}
         compact
       />

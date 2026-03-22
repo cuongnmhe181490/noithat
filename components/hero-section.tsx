@@ -40,10 +40,9 @@ export function HeroSection() {
               <br />
               dành cho cảm xúc sống lâu dài.
             </h1>
-            <p className="max-w-2xl text-base leading-8 text-white/82 md:text-lg">
-              Một digital showroom nơi hình ảnh, vật liệu và case study được sắp đặt
-              để khách hàng nhìn thấy rất nhanh gu thẩm mỹ, mức hoàn thiện và năng lực
-              triển khai thực tế của studio.
+            <p className="max-w-xl text-[0.98rem] leading-8 text-white/82 md:text-[1.05rem]">
+              Digital showroom nơi hình ảnh và case study cho thấy rất nhanh gu thẩm mỹ
+              lẫn năng lực triển khai của studio.
             </p>
           </div>
 

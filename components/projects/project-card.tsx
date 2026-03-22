@@ -66,24 +66,21 @@ export function ProjectCard({
           ) : null}
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           <Link href={`/projects/${project.slug}`}>
-            <h3 className="font-serif text-[2.2rem] leading-[1.02] text-[var(--color-charcoal)] transition group-hover:text-[var(--color-walnut)] md:text-[2.7rem]">
+            <h3 className="text-[1.7rem] font-medium leading-[1.06] tracking-[-0.025em] text-[var(--color-charcoal)] transition group-hover:text-[var(--color-walnut)] md:text-[2rem]">
               {project.name}
             </h3>
           </Link>
-          <p
-            className={cn(
-              "max-w-2xl text-sm leading-7 text-[var(--color-muted)]",
-              immersive ? "line-clamp-2" : "line-clamp-2",
-            )}
-          >
-            {project.summary}
-          </p>
+          {immersive ? (
+            <p className="max-w-xl text-sm leading-6 text-[var(--color-muted)] line-clamp-1">
+              {project.summary}
+            </p>
+          ) : null}
         </div>
 
         <div className="mt-auto flex items-center justify-between gap-3 border-t border-black/7 pt-4">
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-[var(--color-muted)]">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[0.92rem] text-[var(--color-muted)]">
             <span>{project.type}</span>
             <span>{project.area}</span>
           </div>

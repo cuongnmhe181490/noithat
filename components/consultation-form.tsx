@@ -12,9 +12,8 @@ export function ConsultationForm() {
         <h2 className="editorial-title max-w-2xl text-[var(--color-charcoal)]">
           Một form ngắn, chia nhịp rõ để khách hàng điền nhanh mà vẫn đủ thông tin cho buổi hẹn đầu tiên.
         </h2>
-        <p className="max-w-xl text-sm leading-7 text-[var(--color-muted)]">
-          Bạn không cần mô tả mọi thứ thật hoàn hảo. Chỉ cần đủ bối cảnh để studio
-          hiểu công trình, phạm vi và mức đầu tư mong muốn.
+        <p className="max-w-lg text-sm leading-6 text-[var(--color-muted)]">
+          Chỉ cần đủ bối cảnh để studio hiểu công trình, phạm vi và mức đầu tư mong muốn.
         </p>
       </div>
 
@@ -28,7 +27,7 @@ export function ConsultationForm() {
         <section className="rounded-[1.8rem] bg-[rgba(255,255,255,0.38)] p-5 md:p-6">
           <div className="mb-4">
             <p className="section-kicker">Bước 1 · Thông tin liên hệ</p>
-            <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
+            <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
               Thông tin cơ bản để chúng tôi phản hồi lại lịch hẹn.
             </p>
           </div>
@@ -57,7 +56,7 @@ export function ConsultationForm() {
         <section className="rounded-[1.8rem] bg-[rgba(255,255,255,0.3)] p-5 md:p-6">
           <div className="mb-4">
             <p className="section-kicker">Bước 2 · Thông tin công trình</p>
-            <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
+            <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
               Các trường này giúp định hình quy mô và hướng tư vấn phù hợp.
             </p>
           </div>
@@ -107,7 +106,7 @@ export function ConsultationForm() {
         <section className="rounded-[1.8rem] bg-[rgba(255,255,255,0.24)] p-5 md:p-6">
           <div className="mb-4">
             <p className="section-kicker">Bước 3 · Brief nhu cầu</p>
-            <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
+            <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
               Vài dòng về hiện trạng, mong muốn và mốc thời gian dự kiến là đủ.
             </p>
           </div>
@@ -134,10 +133,10 @@ export function ConsultationForm() {
           </div>
         </section>
 
-        <div className="rounded-[1.6rem] bg-[rgba(21,19,17,0.03)] px-5 py-4 text-sm leading-7 text-[var(--color-muted)]">
+        <div className="rounded-[1.6rem] bg-[rgba(21,19,17,0.03)] px-5 py-4 text-sm leading-6 text-[var(--color-muted)]">
           {submitted
             ? "Brief mẫu đã được ghi nhận. Khi nối API hoặc CMS, form này có thể gửi dữ liệu thật ngay mà không cần đổi lại cấu trúc."
-            : "Thông tin của bạn giúp cuộc hẹn đầu tiên đi thẳng vào điều quan trọng nhất: nhu cầu sống, phạm vi công việc và mức đầu tư phù hợp."}
+            : "Thông tin của bạn giúp cuộc hẹn đầu tiên đi thẳng vào nhu cầu sống, phạm vi công việc và mức đầu tư phù hợp."}
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4">

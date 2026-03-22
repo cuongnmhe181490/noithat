@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <h1 className="mt-6 max-w-5xl font-serif text-5xl leading-none md:text-7xl">
             {project.name}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/78 md:text-lg">
+          <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-white/78 md:text-[1.03rem]">
             {project.summary}
           </p>
           <div className="mt-8 grid max-w-4xl gap-5 border-t border-white/12 pt-6 md:grid-cols-5">
@@ -99,7 +99,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="space-y-6">
           <SectionHeading
             eyebrow="Concept story"
-            title="Một case study nên cho thấy vì sao không gian này đáng nhớ, không chỉ nó trông đẹp ra sao."
+            title="Một case study nên cho thấy vì sao không gian này đáng nhớ."
             description={project.concept}
             align="left"
           />
@@ -148,7 +148,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="luxury-card rounded-[2rem] p-7">
           <SectionHeading
             eyebrow="Material palette"
-            title="Vật liệu chính và các chi tiết đắt giá tạo nên chiều sâu của công trình."
+            title="Vật liệu chính tạo nên chiều sâu của công trình."
             align="left"
           />
           <ul className="mt-6 space-y-3">
@@ -189,7 +189,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <SectionHeading
           eyebrow="Fullscreen gallery"
           title="Nhịp ảnh lớn để người xem cảm nhận không gian như đang hiện diện bên trong."
-          description="Gallery được dàn dựng với các tỷ lệ ảnh khác nhau để tạo cảm giác editorial thay vì một lưới ảnh đồng đều."
+          description="Gallery giữ các tỷ lệ ảnh khác nhau để tạo cảm giác editorial."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {project.gallery.map((image, index) => (
@@ -228,8 +228,8 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       >
         <SectionHeading
           eyebrow="Timeline triển khai"
-          title="Một dự án cao cấp cần được kiểm soát bằng quy trình rõ, không chỉ bằng hình ảnh đẹp."
-          description="Timeline dưới đây cho thấy cách dự án đi từ khảo sát, concept, hồ sơ kỹ thuật đến thi công và hoàn thiện cuối cùng."
+          title="Một dự án cao cấp cần được kiểm soát bằng quy trình rõ."
+          description="Từ khảo sát, concept và hồ sơ kỹ thuật đến thi công và hoàn thiện."
           align="left"
         />
         <div className="space-y-4">

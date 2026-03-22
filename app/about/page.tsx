@@ -16,10 +16,10 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Atelier profile"
             title="Điều chúng tôi theo đuổi không phải là làm cho không gian trông đắt tiền, mà là khiến nó sống lâu vẫn thấy đúng."
-            description="Mộc Du Ký Atelier làm việc như một studio biên tập: giữ lại những gì thật sự cần để không gian có chiều sâu, có nhịp điệu và đủ năng lực đi đến công trình hoàn thiện cuối cùng."
+            description="Mộc Du Ký Atelier làm việc như một studio biên tập: giữ lại những gì thật sự cần để không gian có chiều sâu và đi đến công trình hoàn thiện cuối cùng."
             align="left"
           />
-          <p className="max-w-xl text-sm leading-8 text-[var(--color-muted)]">
+          <p className="max-w-lg text-sm leading-7 text-[var(--color-muted)]">
             Khác biệt không nằm ở việc dùng nhiều vật liệu đắt, mà ở cách chọn đúng tỷ lệ,
             đúng mức hoàn thiện và đúng cảm giác sử dụng cho từng nhóm khách hàng.
           </p>
@@ -70,7 +70,7 @@ export default function AboutPage() {
             key={item.title}
             className={index === 1 ? "luxury-card rounded-[2rem] p-7" : "surface-soft rounded-[2rem] p-7"}
           >
-            <h2 className="font-serif text-[2.2rem] leading-none text-[var(--color-charcoal)]">
+            <h2 className="text-[1.55rem] font-medium leading-[1.08] tracking-[-0.02em] text-[var(--color-charcoal)]">
               {item.title}
             </h2>
             <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
@@ -83,10 +83,10 @@ export default function AboutPage() {
       <section className="section-shell section-pad grid gap-8 lg:grid-cols-[1.02fr_0.98fr]">
         <div className="luxury-card rounded-[2.2rem] p-8">
           <p className="section-kicker">Cách làm việc</p>
-          <h2 className="mt-4 max-w-3xl font-serif text-[3.4rem] leading-[0.98] text-[var(--color-charcoal)]">
+          <h2 className="mt-4 max-w-3xl font-serif text-[3rem] leading-[1] text-[var(--color-charcoal)]">
             Cân bằng giữa cảm xúc thẩm mỹ, công năng sống và khả năng thực thi.
           </h2>
-          <p className="mt-5 max-w-2xl text-sm leading-8 text-[var(--color-muted)]">
+          <p className="mt-5 max-w-[58ch] text-sm leading-7 text-[var(--color-muted)]">
             Mỗi dự án được đặt trên ba lớp cùng lúc: người sống trong đó là ai, không
             gian cần tạo ra cảm giác gì, và công trình sẽ được hiện thực ra sao để không
             mất đi tinh thần ban đầu.

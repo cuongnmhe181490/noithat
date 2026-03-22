@@ -22,9 +22,8 @@ export default function ProjectsPage() {
           <h1 className="mt-6 max-w-5xl font-serif text-5xl leading-none md:text-7xl">
             Duyệt dự án như đang bước qua một gallery nội thất cao cấp.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/78 md:text-lg">
-            Tìm nhanh case study phù hợp theo loại công trình, phong cách, diện tích
-            hoặc khu vực trước khi đặt lịch tư vấn riêng.
+          <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-white/78 md:text-[1.03rem]">
+            Tìm nhanh case study phù hợp theo loại công trình, phong cách, diện tích hoặc khu vực.
           </p>
           <div className="mt-8 grid max-w-3xl gap-5 border-t border-white/12 pt-6 md:grid-cols-3">
             {stats.slice(0, 3).map((item) => (
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
       <ProjectsShowcase
         title="Tất cả dự án"
         eyebrow="Duyệt theo nhu cầu"
-        description="Mỗi card chỉ giữ lượng text vừa đủ để khách hàng lọc nhanh, còn phần thuyết phục sâu hơn nằm trong từng case study."
+        description="Mỗi card chỉ giữ lượng text vừa đủ để khách hàng lọc nhanh."
         projects={projects}
       />
     </section>

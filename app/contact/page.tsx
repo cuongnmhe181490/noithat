@@ -18,7 +18,7 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="Private showroom booking"
             title="Một luồng tư vấn nên khiến khách hàng cảm thấy nhẹ, rõ và đáng để để lại thông tin."
-            description="Phần giới thiệu, trust cue và form được tách nhịp rõ để trải nghiệm điền brief dễ thở hơn, thay vì nén mọi thứ vào một khối nặng."
+            description="Giới thiệu, trust cue và form được tách nhịp rõ để trải nghiệm điền brief dễ thở hơn."
             align="left"
           />
 
@@ -47,9 +47,8 @@ export default function ContactPage() {
 
           <div className="luxury-card rounded-[1.8rem] p-6">
             <p className="section-kicker">Buổi hẹn đầu tiên</p>
-            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
-              Thường kéo dài 45 đến 60 phút, tập trung vào nhu cầu sống, mức hoàn thiện,
-              timeline bàn giao và phạm vi công việc thực tế.
+            <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+              Thường kéo dài 45 đến 60 phút, tập trung vào nhu cầu sống, timeline bàn giao và phạm vi công việc thực tế.
             </p>
           </div>
         </div>

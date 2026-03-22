@@ -137,15 +137,15 @@ img {
 
 .display-title {
   font-family: var(--font-cormorant), serif;
-  font-size: clamp(3.7rem, 8vw, 7.8rem);
-  line-height: 0.92;
+  font-size: clamp(3.3rem, 7vw, 6.8rem);
+  line-height: 0.94;
   letter-spacing: -0.05em;
 }
 
 .editorial-title {
   font-family: var(--font-cormorant), serif;
-  font-size: clamp(2.9rem, 5vw, 5.5rem);
-  line-height: 0.94;
+  font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+  line-height: 0.98;
   letter-spacing: -0.045em;
 }
 
@@ -184,7 +184,7 @@ img {
   gap: 0.75rem;
   border-radius: 999px;
   padding: 1rem 1.6rem;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   letter-spacing: 0.01em;
   transition:
     transform 320ms ease,
@@ -249,8 +249,9 @@ img {
 
 .prose-shell p {
   margin: 0 0 1.4rem;
-  font-size: 1.06rem;
-  line-height: 1.95;
+  max-width: 66ch;
+  font-size: 1rem;
+  line-height: 1.9;
   color: var(--color-muted);
 }
 

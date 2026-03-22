@@ -11,8 +11,8 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
       <div className="flex items-end justify-between gap-6">
         <SectionHeading
           eyebrow="Lookbook journal"
-          title="Một editorial journal nên mời người xem ở lại lâu hơn, thay vì chỉ lấp đầy menu bằng blog."
-          description="Ảnh đi trước, metadata gọn và nhịp đọc rõ giúp section này giống một tạp chí thương hiệu hơn là một danh sách bài viết."
+          title="Một journal tốt nên kéo người xem ở lại nhẹ nhàng, không bắt họ đọc quá nhiều."
+          description="Ảnh đi trước, metadata gọn và excerpt ngắn giúp section này dễ scan hơn."
           align="left"
         />
         <Link href="/blog" className="button-secondary hidden md:inline-flex">
@@ -41,11 +41,11 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
                 <span>{featured.readingTime}</span>
               </div>
               <Link href={`/blog/${featured.slug}`}>
-                <h3 className="max-w-3xl font-serif text-[3rem] leading-[1.02] text-[var(--color-charcoal)]">
+                <h3 className="max-w-3xl font-serif text-[2.5rem] leading-[1.04] text-[var(--color-charcoal)] md:text-[2.8rem]">
                   {featured.title}
                 </h3>
               </Link>
-              <p className="max-w-2xl text-sm leading-7 text-[var(--color-muted)]">
+              <p className="max-w-[50ch] text-sm leading-6 text-[var(--color-muted)] line-clamp-2">
                 {featured.excerpt}
               </p>
             </div>
@@ -77,11 +77,11 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
                     <span>{post.readingTime}</span>
                   </div>
                   <Link href={`/blog/${post.slug}`}>
-                    <h3 className="font-serif text-[2rem] leading-[1.06] text-[var(--color-charcoal)]">
+                    <h3 className="text-[1.35rem] font-medium leading-[1.12] tracking-[-0.02em] text-[var(--color-charcoal)]">
                       {post.title}
                     </h3>
                   </Link>
-                  <p className="line-clamp-2 text-sm leading-7 text-[var(--color-muted)]">
+                  <p className="line-clamp-2 max-w-[42ch] text-sm leading-6 text-[var(--color-muted)]">
                     {post.excerpt}
                   </p>
                 </div>

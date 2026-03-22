@@ -9,10 +9,8 @@ export function BrandSignalStrip() {
           <h2 className="mt-4 max-w-2xl font-serif text-[2.8rem] leading-[0.98] text-[var(--color-charcoal)]">
             Một buổi hẹn riêng, được chuẩn bị theo diện tích, gu sống và mức đầu tư của bạn.
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--color-muted)]">
-            Khách hàng không cần đi qua một luồng tư vấn đại trà. Mục tiêu là giúp
-            cuộc hẹn đầu tiên đi thẳng vào điều quan trọng nhất: nhu cầu sống, mức
-            hoàn thiện và timeline thực tế.
+          <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--color-muted)]">
+            Cuộc hẹn đầu tiên đi thẳng vào nhu cầu sống, mức hoàn thiện và timeline thực tế.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/contact" className="button-primary">
@@ -29,9 +27,8 @@ export function BrandSignalStrip() {
           <h2 className="mt-4 max-w-xl font-serif text-[2.4rem] leading-[1] text-[var(--color-charcoal)]">
             Thiết kế chỉ thật sự có giá trị khi được thi công đúng tinh thần ban đầu.
           </h2>
-          <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
-            Từ hồ sơ, xưởng đến công trình, toàn bộ quá trình được kiểm soát như một
-            chuỗi thực thi thống nhất thay vì nhiều mắt xích rời rạc.
+          <p className="mt-4 max-w-md text-sm leading-7 text-[var(--color-muted)]">
+            Từ hồ sơ, xưởng đến công trình, mọi mắt xích được giữ cùng một ngôn ngữ.
           </p>
         </article>
       </div>

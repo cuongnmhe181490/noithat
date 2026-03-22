@@ -11,8 +11,8 @@ export function TestimonialsSection({
     <section className="section-shell section-pad">
       <SectionHeading
         eyebrow="Client voice"
-        title="Những phản hồi nên được đọc như một dấu chấm tin cậy, không phải một bức tường lời khen."
-        description="Chúng tôi giữ section này gọn để người xem cảm được chất lượng sau bàn giao mà không bị mệt bởi quá nhiều trích dẫn dài."
+        title="Một vài phản hồi đủ để người xem tin vào chất lượng sau bàn giao."
+        description="Section này nên tạo tin cậy nhanh, không biến thành một bức tường lời khen."
       />
       <div className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
         {testimonials.map((item, index) => (
@@ -28,7 +28,7 @@ export function TestimonialsSection({
                 />
               </div>
               <div>
-                <h3 className="text-lg font-medium text-[var(--color-charcoal)]">
+                <h3 className="text-base font-medium text-[var(--color-charcoal)]">
                   {item.name}
                 </h3>
                 <p className="text-sm text-[var(--color-muted)]">{item.role}</p>
@@ -37,8 +37,8 @@ export function TestimonialsSection({
             <p
               className={
                 index === 0
-                  ? "mt-6 font-serif text-[2.3rem] leading-[1.2] text-[var(--color-charcoal)]"
-                  : "mt-6 font-serif text-[1.8rem] leading-[1.25] text-[var(--color-charcoal)]"
+                  ? "mt-6 font-serif text-[2rem] leading-[1.24] text-[var(--color-charcoal)]"
+                  : "mt-6 font-serif text-[1.55rem] leading-[1.28] text-[var(--color-charcoal)]"
               }
             >
               “{item.quote}”

@@ -22,9 +22,8 @@ export default function BlogPage() {
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-none md:text-7xl">
             Một editorial journal nên gợi cảm hứng trước khi nó thuyết phục.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 md:text-lg">
-            Ở đây, bài viết được trình bày theo nhịp magazine: ảnh dẫn cảm xúc trước,
-            metadata gọn và typography đủ thoáng để người xem muốn đọc tiếp.
+          <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-white/78 md:text-[1.03rem]">
+            Ảnh dẫn cảm xúc trước, metadata gọn và nhịp đọc đủ thoáng để người xem muốn đọc tiếp.
           </p>
         </div>
       </div>

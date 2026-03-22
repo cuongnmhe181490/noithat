@@ -21,7 +21,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Tailored services"
             title="Mỗi dịch vụ là một cách tiếp cận khác nhau cho cùng một mục tiêu: tạo ra không gian sống đúng gu và triển khai được đến cùng."
-            description="Trang này chỉ nên giúp người dùng hiểu rất nhanh đâu là lối vào phù hợp với mình, thay vì khiến họ đọc một catalogue dài."
+            description="Giúp người dùng hiểu rất nhanh đâu là lối vào phù hợp với mình."
             align="left"
           />
           <div className="rounded-[2rem] border border-black/8 bg-[rgba(255,255,255,0.3)] p-6">
@@ -69,11 +69,11 @@ export default function ServicesPage() {
 
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                 <p className="section-kicker">{service.slug.replaceAll("-", " ")}</p>
-                <h2 className="mt-4 max-w-2xl font-serif text-[3.4rem] leading-[0.98] text-[var(--color-charcoal)]">
+                <h2 className="mt-4 max-w-2xl text-[2rem] font-medium leading-[1.04] tracking-[-0.025em] text-[var(--color-charcoal)] md:text-[2.35rem]">
                   {service.name}
                 </h2>
-                <p className="mt-5 max-w-xl text-sm leading-8 text-[var(--color-muted)]">
-                  {service.description}
+                <p className="mt-4 max-w-lg text-sm leading-6 text-[var(--color-muted)]">
+                  {service.summary}
                 </p>
 
                 <div className="mt-8 grid gap-4 md:grid-cols-3">
