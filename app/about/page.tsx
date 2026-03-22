@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-shell section-pad grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
+      <section className="section-shell section-pad grid gap-10 lg:grid-cols-[0.86fr_1.14fr]">
         <div className="space-y-6">
           <SectionHeading
             eyebrow="Atelier profile"
@@ -24,14 +24,30 @@ export default function AboutPage() {
             đúng mức hoàn thiện và đúng cảm giác sử dụng cho từng nhóm khách hàng.
           </p>
         </div>
-        <div className="luxury-frame relative min-h-[38rem] overflow-hidden rounded-[2.6rem]">
-          <Image
-            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
-            alt="Không gian studio nội thất cao cấp"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="luxury-frame relative min-h-[38rem] overflow-hidden rounded-[2.6rem] md:col-span-2">
+            <Image
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              alt="Không gian studio nội thất cao cấp"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="surface-soft rounded-[2rem] p-6">
+            <p className="section-kicker">Showroom</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
+              Không gian tiếp khách được chuẩn bị theo lịch hẹn riêng để việc chọn vật liệu
+              và trao đổi direction diễn ra đủ sâu, đủ tĩnh.
+            </p>
+          </div>
+          <div className="surface-soft rounded-[2rem] p-6">
+            <p className="section-kicker">Xưởng</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
+              Xưởng giúp những quyết định trên bản vẽ đi được đến lớp hoàn thiện thật, với
+              độ chính xác và khả năng bespoke cao hơn.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -42,17 +58,17 @@ export default function AboutPage() {
             body: "Mỗi dự án được theo sát kỹ hơn, phản hồi nhanh hơn và ít bị chia cắt qua nhiều lớp trung gian.",
           },
           {
-            title: "Xưởng hỗ trợ bespoke thực tế",
-            body: "Những chi tiết quan trọng có thể được hiệu chỉnh ở mức hoàn thiện thật, thay vì dừng ở bản vẽ đẹp.",
+            title: "Tư duy biên tập thay vì phô diễn",
+            body: "Chúng tôi cắt bỏ những gì không thật sự cần để không gian giữ được nhịp điệu và độ sang lâu dài.",
           },
           {
-            title: "Sang trọng không phô trương",
-            body: "Chúng tôi ưu tiên chiều sâu hoàn thiện, độ bền cảm xúc và trải nghiệm sống dài lâu hơn là hiệu ứng thị giác ngắn hạn.",
+            title: "Triển khai là một phần của thiết kế",
+            body: "Thiết kế, xưởng và công trường phải nói cùng một ngôn ngữ thì công trình mới giữ được thần thái ban đầu.",
           },
         ].map((item, index) => (
           <article
             key={item.title}
-            className={index === 1 ? "luxury-card rounded-[2rem] p-7" : "rounded-[2rem] border border-black/8 bg-[rgba(255,255,255,0.3)] p-7"}
+            className={index === 1 ? "luxury-card rounded-[2rem] p-7" : "surface-soft rounded-[2rem] p-7"}
           >
             <h2 className="font-serif text-[2.2rem] leading-none text-[var(--color-charcoal)]">
               {item.title}
@@ -64,9 +80,9 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[1.04fr_0.96fr]">
+      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[1.02fr_0.98fr]">
         <div className="luxury-card rounded-[2.2rem] p-8">
-          <p className="section-kicker">Phương pháp làm việc</p>
+          <p className="section-kicker">Cách làm việc</p>
           <h2 className="mt-4 max-w-3xl font-serif text-[3.4rem] leading-[0.98] text-[var(--color-charcoal)]">
             Cân bằng giữa cảm xúc thẩm mỹ, công năng sống và khả năng thực thi.
           </h2>
@@ -79,12 +95,12 @@ export default function AboutPage() {
         <div className="grid gap-4">
           {[
             "Tư duy biên tập giúp cắt bỏ những chi tiết không thực sự cần thiết.",
-            "Vật liệu được chọn theo cách chúng phản ứng với ánh sáng và thời gian sử dụng.",
+            "Vật liệu được chọn theo cách chúng phản ứng với ánh sáng, thời gian và nhịp sử dụng hằng ngày.",
             "Quy trình rõ giúp khách hàng an tâm ngay cả với các dự án kéo dài nhiều tháng.",
           ].map((item) => (
             <div
               key={item}
-              className="rounded-[1.8rem] border border-black/8 bg-[rgba(255,255,255,0.28)] p-6 text-sm leading-7 text-[var(--color-muted)]"
+              className="surface-soft rounded-[1.8rem] p-6 text-sm leading-7 text-[var(--color-muted)]"
             >
               {item}
             </div>

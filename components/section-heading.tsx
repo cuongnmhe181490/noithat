@@ -20,15 +20,21 @@ export function SectionHeading({
       className={cn(
         "space-y-5",
         align === "center" && "mx-auto max-w-3xl text-center",
+        align === "left" && "max-w-3xl",
         className,
       )}
     >
       {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
-      <h2 className="font-serif text-4xl leading-none text-[var(--color-charcoal)] md:text-6xl">
+      <h2 className="font-serif text-[clamp(2.8rem,5vw,5.1rem)] leading-[0.95] text-[var(--color-charcoal)]">
         {title}
       </h2>
       {description ? (
-        <p className="max-w-2xl text-base leading-7 text-[var(--color-muted)] md:text-lg">
+        <p
+          className={cn(
+            "max-w-2xl text-base leading-8 text-[var(--color-muted)] md:text-lg",
+            align === "center" && "mx-auto",
+          )}
+        >
           {description}
         </p>
       ) : null}

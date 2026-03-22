@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[0.76fr_1.24fr]">
         <div className="space-y-8">
           <SectionHeading
             eyebrow="Private showroom booking"
             title="Một luồng tư vấn nên khiến khách hàng cảm thấy nhẹ, rõ và đáng để để lại thông tin."
-            description="Chúng tôi chia rõ phần giới thiệu, trust cue và form để trải nghiệm điền brief dễ thở hơn, thay vì nén mọi thứ vào một khối nặng."
+            description="Phần giới thiệu, trust cue và form được tách nhịp rõ để trải nghiệm điền brief dễ thở hơn, thay vì nén mọi thứ vào một khối nặng."
             align="left"
           />
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
             {contactDetails.slice(0, 3).map((item, index) => (
               <div
                 key={item.label}
-                className={index === 0 ? "luxury-card rounded-[1.8rem] p-5" : "rounded-[1.8rem] border border-black/8 bg-[rgba(255,255,255,0.28)] p-5"}
+                className={index === 0 ? "luxury-card rounded-[1.8rem] p-5" : "surface-soft rounded-[1.8rem] p-5"}
               >
                 <p className="section-kicker">{item.label}</p>
                 <p className="mt-3 text-base leading-7 text-[var(--color-charcoal)]">
@@ -36,13 +36,21 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="rounded-[1.8rem] border border-black/8 bg-[rgba(255,255,255,0.34)] p-6">
+          <div className="surface-soft rounded-[1.8rem] p-6">
             <p className="section-kicker">Trust cues</p>
             <ul className="mt-4 space-y-2 text-sm leading-7 text-[var(--color-muted)]">
               <li>Phản hồi sơ bộ trong vòng 24 giờ làm việc.</li>
               <li>Tư vấn theo diện tích, timeline và ngân sách thực tế.</li>
               <li>Ưu tiên lịch hẹn riêng tại showroom hoặc online nếu ở xa.</li>
             </ul>
+          </div>
+
+          <div className="luxury-card rounded-[1.8rem] p-6">
+            <p className="section-kicker">Buổi hẹn đầu tiên</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
+              Thường kéo dài 45 đến 60 phút, tập trung vào nhu cầu sống, mức hoàn thiện,
+              timeline bàn giao và phạm vi công việc thực tế.
+            </p>
           </div>
         </div>
 

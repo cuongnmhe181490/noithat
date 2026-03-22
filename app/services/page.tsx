@@ -17,20 +17,43 @@ export default function ServicesPage() {
   return (
     <>
       <section className="section-shell section-pad">
-        <div className="max-w-4xl">
+        <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr]">
           <SectionHeading
             eyebrow="Tailored services"
-            title="Mỗi dịch vụ nên giúp khách hàng hiểu rất nhanh khi nào nó phù hợp, họ nhận được gì và bước tiếp theo là gì."
-            description="Thay vì lặp cùng một cấu trúc block, chúng tôi trình bày dịch vụ như các lối vào khác nhau cho cùng một hệ tư vấn cao cấp."
+            title="Mỗi dịch vụ là một cách tiếp cận khác nhau cho cùng một mục tiêu: tạo ra không gian sống đúng gu và triển khai được đến cùng."
+            description="Trang này chỉ nên giúp người dùng hiểu rất nhanh đâu là lối vào phù hợp với mình, thay vì khiến họ đọc một catalogue dài."
             align="left"
           />
+          <div className="rounded-[2rem] border border-black/8 bg-[rgba(255,255,255,0.3)] p-6">
+            <p className="section-kicker">Decision helper</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <div>
+                <p className="text-sm font-medium text-[var(--color-charcoal)]">Chưa rõ hướng đi</p>
+                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
+                  Bắt đầu bằng tư vấn concept để khóa gu thẩm mỹ và mức đầu tư.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-[var(--color-charcoal)]">Đã có mặt bằng</p>
+                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
+                  Đi thẳng vào thiết kế trọn gói để kiểm soát công năng, ánh sáng và hồ sơ.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-[var(--color-charcoal)]">Cần một đầu mối rõ</p>
+                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
+                  Chọn thi công trọn gói hoặc bespoke để giữ chất lượng đến lớp hoàn thiện cuối.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-14 grid gap-12">
+        <div className="mt-14 grid gap-14">
           {services.map((service, index) => (
             <article
               key={service.slug}
-              className="grid gap-8 lg:grid-cols-[0.54fr_0.46fr] lg:items-center"
+              className="grid gap-8 lg:grid-cols-[0.5fr_0.5fr] lg:items-center"
             >
               <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="relative min-h-[26rem] overflow-hidden rounded-[2.2rem] shadow-[0_24px_70px_rgba(22,18,14,0.1)]">
@@ -38,7 +61,7 @@ export default function ServicesPage() {
                     src={service.image}
                     alt={service.name}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    sizes="(max-width: 1024px) 100vw, 44vw"
                     className="object-cover"
                   />
                 </div>
@@ -54,23 +77,23 @@ export default function ServicesPage() {
                 </p>
 
                 <div className="mt-8 grid gap-4 md:grid-cols-3">
-                  <div className="rounded-[1.6rem] bg-[rgba(255,255,255,0.32)] p-5">
-                    <p className="section-kicker">Khi nào nên chọn</p>
+                  <div className="surface-soft rounded-[1.6rem] p-5">
+                    <p className="section-kicker">Ai nên chọn</p>
                     <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
                       {service.suitedFor.slice(0, 2).map((item) => (
                         <li key={item}>{item}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-[1.6rem] bg-[rgba(255,255,255,0.24)] p-5">
-                    <p className="section-kicker">Bạn nhận được</p>
+                  <div className="luxury-card rounded-[1.6rem] p-5">
+                    <p className="section-kicker">Nhận được gì</p>
                     <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
                       {service.deliverables.slice(0, 2).map((item) => (
                         <li key={item}>{item}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="luxury-card rounded-[1.6rem] p-5">
+                  <div className="surface-soft rounded-[1.6rem] p-5">
                     <p className="section-kicker">Bước tiếp theo</p>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-charcoal)]">
                       Gửi brief công trình để studio đề xuất buổi làm việc đầu tiên phù hợp.
