@@ -23,6 +23,8 @@
   --section-tight-space: clamp(4rem, 6vw, 5.75rem);
   --container-main: 1320px;
   --container-narrow: 1120px;
+  --header-height: 4.6rem;
+  --header-safe-top: calc(var(--header-height) + 2rem);
 }
 
 @theme inline {
@@ -110,6 +112,14 @@ img {
 .section-narrow {
   width: min(100% - 2rem, var(--container-narrow));
   margin-inline: auto;
+}
+
+.page-safe-top {
+  padding-top: calc(var(--header-safe-top) + 1rem);
+}
+
+.hero-safe-top {
+  padding-top: calc(var(--header-safe-top) + 0.5rem);
 }
 
 .eyebrow {

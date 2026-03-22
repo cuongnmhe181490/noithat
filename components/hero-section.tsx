@@ -29,7 +29,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(176,140,100,0.16),transparent_18%)]" />
       </div>
 
-      <div className="section-narrow relative flex min-h-[98svh] items-end pb-14 pt-28 md:pb-18 lg:pb-20">
+      <div className="section-narrow hero-safe-top relative flex min-h-[98svh] items-end pb-14 md:pb-18 lg:pb-20">
         <motion.div style={{ y: contentY }} className="max-w-[56rem]">
           <span className="eyebrow border-white/16 bg-white/8 text-white">
             {siteConfig.tagline}

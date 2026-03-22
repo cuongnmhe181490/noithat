@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-shell section-pad grid gap-10 lg:grid-cols-[0.86fr_1.14fr]">
+      <section className="section-shell section-pad page-safe-top grid gap-10 lg:grid-cols-[0.86fr_1.14fr]">
         <div className="space-y-6">
           <SectionHeading
             eyebrow="Atelier profile"

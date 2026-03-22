@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <section className="pb-24 pt-20">
+    <section className="page-safe-top pb-24">
       <div data-header-hero="true" className="section-shell luxury-frame relative min-h-[30rem] overflow-hidden rounded-[2.8rem]">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0.16),rgba(11,10,8,0.82))]" />
-        <div className="relative flex min-h-[30rem] flex-col justify-end px-6 pb-8 pt-20 text-[var(--color-ivory)] md:px-10">
+        <div className="hero-safe-top relative flex min-h-[30rem] flex-col justify-end px-6 pb-8 text-[var(--color-ivory)] md:px-10">
           <span className="eyebrow border-white/16 bg-white/10 text-white">
             Journal / Lookbook
           </span>

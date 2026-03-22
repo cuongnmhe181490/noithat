@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[0.76fr_1.24fr]">
+      <section className="section-shell section-pad page-safe-top grid gap-8 lg:grid-cols-[0.76fr_1.24fr]">
         <div className="space-y-8">
           <SectionHeading
             eyebrow="Private showroom booking"

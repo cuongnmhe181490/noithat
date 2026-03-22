@@ -21,18 +21,18 @@ export function SiteHeader() {
       <div className="section-shell pointer-events-auto pt-4">
         <div
           className={cn(
-            "flex items-center justify-between rounded-full border px-4 py-3 transition duration-300 md:px-5",
+            "flex items-center justify-between rounded-full border px-4 py-2.5 transition duration-300 md:px-5",
             isHeroState &&
-              "border-white/12 bg-[rgba(14,12,10,0.82)] text-white shadow-[0_18px_44px_rgba(10,8,7,0.2)] backdrop-blur-xl",
+              "border-white/10 bg-[rgba(14,12,10,0.8)] text-white shadow-[0_12px_30px_rgba(10,8,7,0.14)] backdrop-blur-xl",
             isStickyState &&
-              "border-black/8 bg-[rgba(247,242,236,0.98)] text-[var(--color-charcoal)] shadow-[0_18px_42px_rgba(22,18,14,0.08)] backdrop-blur-xl",
+              "border-black/8 bg-[rgba(247,242,236,0.98)] text-[var(--color-charcoal)] shadow-[0_10px_26px_rgba(22,18,14,0.06)] backdrop-blur-xl",
           )}
         >
           <Link href="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
             <div
               className={cn(
-                "flex h-11 w-11 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.34em]",
-                isHeroState && "border-white/18 bg-white/8 text-[var(--color-ivory)]",
+                "flex h-10 w-10 items-center justify-center rounded-full border text-[0.7rem] font-semibold tracking-[0.3em]",
+                isHeroState && "border-white/16 bg-white/8 text-[var(--color-ivory)]",
                 isStickyState &&
                   "border-black/10 bg-[var(--color-charcoal)] text-[var(--color-cream)]",
               )}
@@ -40,11 +40,11 @@ export function SiteHeader() {
               {siteConfig.shortName}
             </div>
             <div className="hidden sm:block">
-              <p className="text-xs uppercase tracking-[0.34em]">{siteConfig.name}</p>
+              <p className="text-[0.7rem] uppercase tracking-[0.34em]">{siteConfig.name}</p>
               <p
                 className={cn(
-                  "text-[0.68rem] uppercase tracking-[0.28em]",
-                  isHeroState ? "text-white/72" : "text-[var(--color-muted)]",
+                  "mt-1 text-[0.64rem] uppercase tracking-[0.24em]",
+                  isHeroState ? "text-white/68" : "text-[var(--color-muted)]",
                 )}
               >
                 Digital flagship showroom
@@ -58,14 +58,14 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-4 py-2.5 text-sm transition",
+                  "rounded-full px-4 py-2 text-sm transition",
                   isActive(item.href)
                     ? isHeroState
-                      ? "bg-white/14 text-white"
-                      : "bg-[var(--color-charcoal)] text-[var(--color-cream)]"
+                      ? "border border-white/14 bg-white/10 text-white"
+                      : "border border-black/10 bg-[rgba(21,19,17,0.04)] text-[var(--color-charcoal)]"
                     : isHeroState
-                      ? "text-white/92 hover:bg-white/10 hover:text-white"
-                      : "text-[var(--color-charcoal)] hover:bg-black/5",
+                      ? "text-white/90 hover:bg-white/8 hover:text-white"
+                      : "text-[var(--color-charcoal)] hover:bg-black/4",
                 )}
               >
                 {item.label}
@@ -73,12 +73,12 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-2.5 lg:flex">
             <Link
               className={cn(
-                "inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm transition",
+                "inline-flex items-center justify-center rounded-full border px-4 py-2.5 text-sm transition",
                 isHeroState &&
-                  "border-white/18 bg-white/6 text-white hover:bg-white/10",
+                  "border-white/16 bg-white/6 text-white hover:bg-white/10",
                 isStickyState &&
                   "border-black/12 bg-white text-[var(--color-charcoal)] hover:bg-[rgba(255,255,255,0.82)]",
               )}
@@ -88,10 +88,10 @@ export function SiteHeader() {
             </Link>
             <Link
               className={cn(
-                "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm transition",
+                "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm transition",
                 isHeroState &&
-                  "bg-[var(--color-ivory)] text-[var(--color-charcoal)] shadow-[0_18px_40px_rgba(8,7,6,0.14)] hover:bg-white",
-                isStickyState && "button-primary",
+                  "bg-[var(--color-ivory)] text-[var(--color-charcoal)] shadow-[0_12px_28px_rgba(8,7,6,0.12)] hover:bg-white",
+                isStickyState && "button-primary !px-4 !py-2.5",
               )}
               href="/contact"
             >
@@ -103,7 +103,7 @@ export function SiteHeader() {
             type="button"
             onClick={() => setMenuOpen((value) => !value)}
             className={cn(
-              "inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden",
+              "inline-flex h-10 w-10 items-center justify-center rounded-full border lg:hidden",
               isHeroState && "border-white/18 bg-white/8 text-white",
               isStickyState &&
                 "border-black/10 bg-[rgba(247,242,236,0.98)] text-[var(--color-charcoal)]",
@@ -141,12 +141,12 @@ export function SiteHeader() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="section-shell pointer-events-auto mt-3 lg:hidden"
           >
             <div
               className={cn(
-                "rounded-[2rem] p-4 shadow-[0_20px_48px_rgba(22,18,14,0.12)] backdrop-blur-xl",
+                "rounded-[1.8rem] p-4 shadow-[0_16px_38px_rgba(22,18,14,0.1)] backdrop-blur-xl",
                 isHeroState &&
                   "border border-white/12 bg-[rgba(15,13,11,0.96)] text-white",
                 isStickyState &&
@@ -154,7 +154,7 @@ export function SiteHeader() {
               )}
             >
               <div className="border-b border-current/10 px-2 pb-4">
-                <p className="text-xs uppercase tracking-[0.3em]">{siteConfig.name}</p>
+                <p className="text-[0.7rem] uppercase tracking-[0.3em]">{siteConfig.name}</p>
                 <p className={cn("mt-2 text-sm", isHeroState ? "text-white/72" : "text-[var(--color-muted)]")}>
                   Không gian nội thất cao cấp được trình bày như một showroom số.
                 </p>
@@ -167,11 +167,11 @@ export function SiteHeader() {
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
                     className={cn(
-                      "rounded-[1.25rem] px-4 py-3 text-sm transition",
+                      "rounded-[1.15rem] px-4 py-3 text-sm transition",
                       isActive(item.href)
                         ? isHeroState
-                          ? "bg-white/14 text-white"
-                          : "bg-[var(--color-charcoal)] text-[var(--color-cream)]"
+                          ? "border border-white/14 bg-white/10 text-white"
+                          : "border border-black/10 bg-[rgba(21,19,17,0.04)] text-[var(--color-charcoal)]"
                         : isHeroState
                           ? "bg-white/6 text-white/92"
                           : "bg-[var(--color-panel)]/60 text-[var(--color-charcoal)]",
@@ -200,7 +200,7 @@ export function SiteHeader() {
                     "inline-flex items-center justify-center rounded-full px-4 py-3 text-sm transition",
                     isHeroState
                       ? "bg-[var(--color-ivory)] text-[var(--color-charcoal)]"
-                      : "button-primary",
+                      : "button-primary !px-4 !py-3",
                   )}
                   href="/contact"
                   onClick={() => setMenuOpen(false)}

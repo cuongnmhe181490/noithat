@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="section-shell section-pad">
+      <section className="section-shell section-pad page-safe-top">
         <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr]">
           <SectionHeading
             eyebrow="Tailored services"

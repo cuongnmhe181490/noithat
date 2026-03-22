@@ -50,7 +50,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     .slice(0, 3);
 
   return (
-    <article className="pb-24 pt-18">
+    <article className="page-safe-top pb-24">
       <section data-header-hero="true" className="section-shell luxury-frame grain-overlay relative min-h-[88vh] overflow-hidden rounded-[2.8rem]">
         <Image
           src={project.heroImage}
@@ -61,7 +61,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,8,7,0.08),rgba(10,8,7,0.3)_34%,rgba(10,8,7,0.88))]" />
-        <div className="relative flex min-h-[88vh] flex-col justify-end px-6 pb-8 pt-24 text-[var(--color-ivory)] md:px-10 md:pb-10">
+        <div className="hero-safe-top relative flex min-h-[88vh] flex-col justify-end px-6 pb-8 text-[var(--color-ivory)] md:px-10 md:pb-10">
           <span className="eyebrow border-white/16 bg-white/10 text-white">
             {project.type}
           </span>

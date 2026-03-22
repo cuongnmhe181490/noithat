@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <section className="pb-24 pt-20">
+    <section className="page-safe-top pb-24">
       <div data-header-hero="true" className="section-shell luxury-frame grain-overlay relative min-h-[34rem] overflow-hidden rounded-[2.8rem]">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,10,8,0.18)_0%,rgba(12,10,8,0.5)_42%,rgba(12,10,8,0.84)_100%)]" />
-        <div className="relative flex min-h-[34rem] flex-col justify-end px-6 pb-8 pt-24 text-[var(--color-ivory)] md:px-10 md:pb-10">
+        <div className="hero-safe-top relative flex min-h-[34rem] flex-col justify-end px-6 pb-8 text-[var(--color-ivory)] md:px-10 md:pb-10">
           <span className="eyebrow border-white/16 bg-white/10 text-white">
             Portfolio showroom
           </span>

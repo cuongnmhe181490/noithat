@@ -36,7 +36,7 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
   }
 
   return (
-    <article className="pb-24 pt-28">
+    <article className="page-safe-top pb-24">
       <div className="section-shell max-w-4xl">
         <span className="eyebrow">{post.category}</span>
         <h1 className="mt-5 font-serif text-5xl leading-[0.98] md:text-6xl">
