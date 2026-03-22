@@ -23,16 +23,16 @@ export function SiteHeader() {
           className={cn(
             "flex items-center justify-between rounded-full border px-4 py-3 transition duration-300 md:px-5",
             isHeroState &&
-              "border-white/12 bg-[rgba(14,12,10,0.78)] text-white shadow-[0_18px_42px_rgba(10,8,7,0.18)] backdrop-blur-xl",
+              "border-white/12 bg-[rgba(14,12,10,0.82)] text-white shadow-[0_18px_44px_rgba(10,8,7,0.2)] backdrop-blur-xl",
             isStickyState &&
-              "border-black/8 bg-[rgba(248,242,235,0.96)] text-[var(--color-charcoal)] shadow-[0_18px_42px_rgba(22,18,14,0.08)] backdrop-blur-xl",
+              "border-black/8 bg-[rgba(247,242,236,0.98)] text-[var(--color-charcoal)] shadow-[0_18px_42px_rgba(22,18,14,0.08)] backdrop-blur-xl",
           )}
         >
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
             <div
               className={cn(
                 "flex h-11 w-11 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.34em]",
-                isHeroState && "border-white/18 bg-white/7 text-[var(--color-ivory)]",
+                isHeroState && "border-white/18 bg-white/8 text-[var(--color-ivory)]",
                 isStickyState &&
                   "border-black/10 bg-[var(--color-charcoal)] text-[var(--color-cream)]",
               )}
@@ -64,8 +64,8 @@ export function SiteHeader() {
                       ? "bg-white/14 text-white"
                       : "bg-[var(--color-charcoal)] text-[var(--color-cream)]"
                     : isHeroState
-                      ? "text-white/90 hover:bg-white/10 hover:text-white"
-                      : "text-[var(--color-charcoal)]/88 hover:bg-black/5 hover:text-[var(--color-charcoal)]",
+                      ? "text-white/92 hover:bg-white/10 hover:text-white"
+                      : "text-[var(--color-charcoal)] hover:bg-black/5",
                 )}
               >
                 {item.label}
@@ -76,17 +76,25 @@ export function SiteHeader() {
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               className={cn(
-                "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm transition",
+                "inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm transition",
                 isHeroState &&
-                  "border border-white/18 bg-white/7 text-white hover:bg-white/11",
+                  "border-white/18 bg-white/6 text-white hover:bg-white/10",
                 isStickyState &&
-                  "border border-black/12 bg-white/92 text-[var(--color-charcoal)] hover:bg-white",
+                  "border-black/12 bg-white text-[var(--color-charcoal)] hover:bg-[rgba(255,255,255,0.82)]",
               )}
               href="/projects"
             >
               Xem dự án
             </Link>
-            <Link className="button-primary" href="/contact">
+            <Link
+              className={cn(
+                "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm transition",
+                isHeroState &&
+                  "bg-[var(--color-ivory)] text-[var(--color-charcoal)] shadow-[0_18px_40px_rgba(8,7,6,0.14)] hover:bg-white",
+                isStickyState && "button-primary",
+              )}
+              href="/contact"
+            >
               Nhận tư vấn
             </Link>
           </div>
@@ -98,7 +106,7 @@ export function SiteHeader() {
               "inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden",
               isHeroState && "border-white/18 bg-white/8 text-white",
               isStickyState &&
-                "border-black/10 bg-[rgba(248,242,235,0.94)] text-[var(--color-charcoal)]",
+                "border-black/10 bg-[rgba(247,242,236,0.98)] text-[var(--color-charcoal)]",
             )}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Đóng menu" : "Mở menu"}
@@ -140,9 +148,9 @@ export function SiteHeader() {
               className={cn(
                 "rounded-[2rem] p-4 shadow-[0_20px_48px_rgba(22,18,14,0.12)] backdrop-blur-xl",
                 isHeroState &&
-                  "border border-white/12 bg-[rgba(15,13,11,0.94)] text-white",
+                  "border border-white/12 bg-[rgba(15,13,11,0.96)] text-white",
                 isStickyState &&
-                  "border border-black/10 bg-[rgba(248,242,235,0.98)] text-[var(--color-charcoal)]",
+                  "border border-black/10 bg-[rgba(247,242,236,0.99)] text-[var(--color-charcoal)]",
               )}
             >
               <div className="border-b border-current/10 px-2 pb-4">
@@ -157,6 +165,7 @@ export function SiteHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setMenuOpen(false)}
                     className={cn(
                       "rounded-[1.25rem] px-4 py-3 text-sm transition",
                       isActive(item.href)
@@ -176,16 +185,26 @@ export function SiteHeader() {
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <Link
                   className={cn(
-                    "inline-flex items-center justify-center rounded-full px-4 py-3 text-sm transition",
+                    "inline-flex items-center justify-center rounded-full border px-4 py-3 text-sm transition",
                     isHeroState
-                      ? "border border-white/18 bg-white/8 text-white"
-                      : "border border-black/12 bg-white/92 text-[var(--color-charcoal)]",
+                      ? "border-white/18 bg-white/8 text-white"
+                      : "border-black/12 bg-white text-[var(--color-charcoal)]",
                   )}
                   href="/projects"
+                  onClick={() => setMenuOpen(false)}
                 >
                   Xem dự án
                 </Link>
-                <Link className="button-primary" href="/contact">
+                <Link
+                  className={cn(
+                    "inline-flex items-center justify-center rounded-full px-4 py-3 text-sm transition",
+                    isHeroState
+                      ? "bg-[var(--color-ivory)] text-[var(--color-charcoal)]"
+                      : "button-primary",
+                  )}
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                >
                   Nhận tư vấn
                 </Link>
               </div>

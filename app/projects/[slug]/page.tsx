@@ -51,7 +51,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <article className="pb-24 pt-18">
-      <section className="section-shell luxury-frame grain-overlay relative min-h-[88vh] overflow-hidden rounded-[2.8rem]">
+      <section data-header-hero="true" className="section-shell luxury-frame grain-overlay relative min-h-[88vh] overflow-hidden rounded-[2.8rem]">
         <Image
           src={project.heroImage}
           alt={project.name}

@@ -17,6 +17,7 @@ export function HeroSection() {
   return (
     <section
       ref={ref}
+      data-header-hero="true"
       className="relative min-h-[98svh] overflow-hidden bg-[var(--color-charcoal)] text-[var(--color-ivory)]"
     >
       <div className="absolute inset-0">
