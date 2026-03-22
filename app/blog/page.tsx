@@ -6,27 +6,32 @@ import { blogPosts } from "@/data/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Lookbook cảm hứng, chia sẻ vật liệu và góc nhìn thẩm mỹ cho những chủ nhà đang xây dựng không gian sống đương đại.",
+    "Luxury editorial journal về phong cách sống, vật liệu và các quyết định nội thất dành cho khách hàng cao cấp tại Việt Nam.",
 };
 
 export default function BlogPage() {
   return (
-    <section className="pb-24 pt-32">
-      <div className="section-shell mb-12 max-w-4xl">
-        <span className="eyebrow">Lookbook journal</span>
-        <h1 className="mt-5 font-serif text-5xl leading-none md:text-7xl">
-          Những ghi chép thẩm mỹ dành cho người đang kiến tạo tổ ấm cao cấp.
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--color-muted)] md:text-lg">
-          Từ cách phối vật liệu đến tâm lý ánh sáng trong không gian sống, mỗi
-          bài viết là một chương nhỏ để khách hàng hiểu sâu hơn trước khi quyết
-          định đầu tư.
-        </p>
+    <section className="pb-24 pt-20">
+      <div className="section-shell luxury-frame relative min-h-[30rem] overflow-hidden rounded-[2.8rem]">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0.18),rgba(11,10,8,0.82))]" />
+        <div className="relative flex min-h-[30rem] flex-col justify-end px-6 pb-8 pt-20 text-[var(--color-ivory)] md:px-10">
+          <span className="eyebrow border-white/16 bg-white/10 text-white">
+            Journal / Lookbook
+          </span>
+          <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-none md:text-7xl">
+            Một luxury editorial journal dành cho những quyết định đầu tư có gu.
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-white/74 md:text-lg">
+            Nơi khách hàng có thể đọc về vật liệu, ánh sáng, nhịp sống và những
+            lựa chọn thẩm mỹ trước khi bước vào dự án thực tế.
+          </p>
+        </div>
       </div>
       <BlogSection posts={blogPosts} />
-      <div className="section-shell mt-12">
+      <div className="section-shell mt-4">
         <Link href="/contact" className="button-secondary">
-          Nhận bản tư vấn concept riêng
+          Nhận concept sơ bộ theo brief của bạn
         </Link>
       </div>
     </section>

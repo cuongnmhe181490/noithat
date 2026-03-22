@@ -56,7 +56,16 @@ export const projects: Project[] = [
       "Căn hộ penthouse được cân chỉnh bằng ánh sáng tự nhiên, veneer gỗ sáng và những khoảng nghỉ đủ yên để mọi chi tiết trở nên đắt giá.",
     concept:
       "Concept xoay quanh cảm giác chậm và ấm. Mặt bằng mở giúp tầm nhìn liên tục từ phòng khách qua bếp đến sân hiên, trong khi bảng vật liệu trung tính giữ lại độ tĩnh cho toàn bộ căn hộ.",
+    challenge:
+      "Không gian penthouse có nhiều góc chuyển và mặt kính lớn, dễ tạo cảm giác lạnh và rời rạc nếu xử lý vật liệu không đủ tinh.",
+    solution:
+      "Chúng tôi dùng trục vật liệu ấm liên tục, ánh sáng gián tiếp và hệ nội thất thấp để cân lại tỷ lệ, khiến toàn bộ căn hộ liền mạch và sang theo cách rất yên.",
     materials: ["Oak veneer", "Limestone mài mờ", "Linen tự nhiên", "Brushed brass"],
+    signatureDetails: [
+      "Bếp đảo nối trực tiếp với bàn ăn như một lõi giao tiếp trung tâm.",
+      "Hệ đèn hắt trần giữ khối kiến trúc mềm và không phá cảm giác tối giản.",
+      "Các mảng veneer lớn được căn vân liên tục để tăng chiều sâu nhìn gần.",
+    ],
     heroImage:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80",
     gallery: [
@@ -118,7 +127,16 @@ export const projects: Project[] = [
       "Dự án cải tạo nhà phố với tinh thần Japandi, thay thế cảm giác chật hẹp bằng cấu trúc mở, ánh sáng dịu và vật liệu mộc có chiều sâu.",
     concept:
       "Ngôi nhà cũ được bóc tách về những thứ thật sự cần thiết. Chúng tôi đưa ánh sáng sâu hơn vào lõi nhà, đồng thời tạo liên kết mềm giữa bếp, bàn ăn và khu sinh hoạt chung để giữ cảm giác ấm cúng.",
+    challenge:
+      "Nhà phố cũ bị chia cắt mạnh, thiếu ánh sáng và giao thông trong nhà không mượt, làm giảm cả công năng lẫn cảm xúc sống.",
+    solution:
+      "Studio tái cấu trúc mặt bằng, mở các lớp chia cần thiết và đưa bảng vật liệu Japandi vào để ngôi nhà vừa rộng hơn về thị giác vừa giữ được độ ấm gia đình.",
     materials: ["Oak sáng", "Clay paint", "Mây đan", "Microcement"],
+    signatureDetails: [
+      "Sân trong nhỏ được tận dụng như điểm lấy sáng cho toàn trục bếp ăn.",
+      "Hệ tủ âm tường giúp nhà gọn nhưng không mất cảm giác mềm của vật liệu.",
+      "Mảng tường clay paint tạo lớp nền mịn và giàu cảm xúc hơn sơn thông thường.",
+    ],
     heroImage:
       "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1800&q=80",
     gallery: [
@@ -180,7 +198,16 @@ export const projects: Project[] = [
       "Biệt thự nghỉ dưỡng với ngôn ngữ thanh lịch và tiết chế, tập trung vào cảm giác thư giãn sâu trong từng vùng không gian.",
     concept:
       "Thay vì dùng quá nhiều chi tiết trang trí, dự án tạo cảm giác cao cấp bằng tỷ lệ lớn, các đường cong mềm và bảng vật liệu có độ phản sáng vừa đủ như đá travertine, walnut và kính khói.",
+    challenge:
+      "Không gian lớn và nhiều mặt thoáng rất dễ trở nên loãng hoặc quá trưng bày nếu không có hệ nhịp vật liệu đủ mạnh.",
+    solution:
+      "Chúng tôi tạo các khối nghỉ thị giác, dùng đường cong làm cầu nối và kiểm soát độ phản sáng để villa mang cảm giác resort riêng tư thay vì phô diễn.",
     materials: ["Travertine", "Walnut", "Bronze mirror", "Bouclé fabric"],
+    signatureDetails: [
+      "Sảnh vào như một gallery mở với đá travertine vân lớn và điểm nhấn điêu khắc.",
+      "Master suite có lounge riêng để chuyển nhịp từ nghỉ dưỡng sang tiếp khách thân mật.",
+      "Các lớp rèm và ánh sáng được điều khiển để thay đổi cảm xúc theo từng thời điểm trong ngày.",
+    ],
     heroImage:
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1800&q=80",
     gallery: [
@@ -242,7 +269,16 @@ export const projects: Project[] = [
       "Không gian làm việc kết hợp showroom thương hiệu, mang cảm giác chỉn chu, sáng và đủ chiều sâu để tiếp khách cao cấp.",
     concept:
       "Dự án được xem như một hành trình nhận diện thương hiệu. Mỗi vùng chức năng đều có nhịp vật liệu và ánh sáng riêng nhưng vẫn giữ một tông sang thống nhất xuyên suốt.",
+    challenge:
+      "Mặt bằng văn phòng có nhiều cột và vùng tối, trong khi doanh nghiệp cần một nơi vừa tiếp khách cao cấp vừa vận hành hiệu quả mỗi ngày.",
+    solution:
+      "Thiết kế chia không gian thành các lớp thương hiệu rõ ràng, xử lý ánh sáng có chủ đích và dùng vật liệu tối vừa đủ để nâng độ tin cậy khi tiếp xúc trực tiếp.",
     materials: ["Walnut laminate", "Dark stone", "Acoustic felt", "Glass"],
+    signatureDetails: [
+      "Lễ tân được xử lý như một khung mở đầu cho trải nghiệm thương hiệu.",
+      "Meeting room dùng tông tối để tăng tập trung và độ trang trọng khi trao đổi.",
+      "Work lounge cân bằng giữa năng lượng làm việc và cảm giác tiếp khách thân thiện.",
+    ],
     heroImage:
       "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=80",
     gallery: [
@@ -303,7 +339,16 @@ export const projects: Project[] = [
       "Penthouse mang tinh thần nghỉ dưỡng boutique với lớp vật liệu trầm ấm, bề mặt phản chiếu mềm và trải nghiệm sống chậm.",
     concept:
       "Không gian được xử lý như một suite riêng tư. Các bề mặt tối màu, kính bronzed và gỗ smoked oak tạo nên sự sang trọng sâu nhưng vẫn dễ sống hằng ngày.",
+    challenge:
+      "Nếu xử lý không khéo, bảng màu tối sẽ khiến penthouse trở nên nặng và thiếu độ thoáng cần thiết cho nhịp sống thường ngày.",
+    solution:
+      "Chúng tôi cân bằng tông trầm bằng các lớp ánh sáng xiên, mặt đá mờ và điểm phản chiếu mềm để giữ được độ sang mà không mất cảm giác thư thái.",
     materials: ["Smoked oak", "Nero stone", "Leather", "Bronzed glass"],
+    signatureDetails: [
+      "Bar mini kết hợp lounge như một góc retreat riêng cho buổi tối.",
+      "Kính bronzed phản xạ ánh sáng dịu thay vì tạo độ bóng lạnh.",
+      "Hệ đầu giường kéo dài đồng bộ với trần giúp master suite có cảm giác suite boutique.",
+    ],
     heroImage:
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80",
     gallery: [

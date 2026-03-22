@@ -1,11 +1,14 @@
 import type {
   ContactDetail,
+  FaqItem,
+  MaterialStory,
   NavigationItem,
   ProcessStep,
   SignaturePillar,
   SiteConfig,
   SiteStat,
   Testimonial,
+  TrustIndicator,
 } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
@@ -156,4 +159,67 @@ export const contactDetails: ContactDetail[] = [
   { label: "Email", value: siteConfig.email },
   { label: "Showroom", value: siteConfig.showroom },
   { label: "Xưởng sản xuất", value: siteConfig.workshop },
+];
+
+export const trustIndicators: TrustIndicator[] = [
+  {
+    title: "Tư duy biên tập không gian",
+    description:
+      "Mỗi dự án được xây dựng như một câu chuyện sống có nhịp điệu, thay vì chỉ là tập hợp của đồ nội thất đẹp.",
+  },
+  {
+    title: "Kiểm soát từ concept đến hoàn thiện",
+    description:
+      "Đội ngũ thiết kế, xưởng và giám sát triển khai làm việc như một hệ thống đồng nhất để giảm sai lệch thực tế.",
+  },
+  {
+    title: "Tư vấn theo gu sống và mức đầu tư",
+    description:
+      "Khách hàng không nhận giải pháp chung chung. Mỗi đề xuất được hiệu chỉnh theo loại công trình, diện tích và kỳ vọng sử dụng.",
+  },
+];
+
+export const materialStories: MaterialStory[] = [
+  {
+    name: "Đá mờ vân lớn",
+    tone: "Quiet statement",
+    description:
+      "Mang lại cảm giác sang trọng sâu nhưng không lạnh, đặc biệt hiệu quả khi kết hợp với ánh sáng xiên và bề mặt gỗ ấm.",
+    image:
+      "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Walnut và oak chọn lọc",
+    tone: "Warm depth",
+    description:
+      "Hai lớp gỗ chủ đạo giúp không gian giữ được độ ấm, độ bền và cảm giác sống lâu mà không lỗi mốt theo thời gian.",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Kim loại hoàn thiện mờ",
+    tone: "Restrained accent",
+    description:
+      "Được dùng tiết chế để tăng độ tinh xảo tại những điểm chạm tay, thay vì trở thành chi tiết phô trương.",
+    image:
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
+export const consultationFaqs: FaqItem[] = [
+  {
+    question: "Tôi chưa có bản vẽ hoàn chỉnh thì có thể tư vấn trước không?",
+    answer:
+      "Có. Buổi tư vấn đầu tiên tập trung vào nhu cầu sống, gu thẩm mỹ, mức đầu tư và bối cảnh công trình để định hướng trước khi đi sâu vào hồ sơ.",
+  },
+  {
+    question: "Studio có nhận dự án ngoài TP. Hồ Chí Minh không?",
+    answer:
+      "Có. Chúng tôi đang triển khai các dự án tại Hà Nội, miền Trung và các second home ven biển, tùy theo quy mô và yêu cầu vận hành.",
+  },
+  {
+    question: "Mất bao lâu để nhận concept sơ bộ?",
+    answer:
+      "Sau buổi làm việc đầu tiên và khi nhận đủ thông tin cơ bản, đội ngũ thường cần từ 5 đến 7 ngày làm việc để phản hồi định hướng concept ban đầu.",
+  },
 ];

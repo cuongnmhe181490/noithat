@@ -24,6 +24,13 @@ export const services: Service[] = [
       "Khách hàng muốn tái định vị không gian sống",
       "Dự án cần chốt direction trước khi đi sâu",
     ],
+    faqs: [
+      {
+        question: "Giai đoạn này phù hợp khi nào?",
+        answer:
+          "Khi khách hàng muốn làm rõ ngôn ngữ thẩm mỹ, vật liệu và mức đầu tư trước khi bước vào thiết kế chi tiết hoặc thi công.",
+      },
+    ],
     image:
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80",
   },
@@ -46,6 +53,13 @@ export const services: Service[] = [
       "Sẵn sàng chuyển sang thi công",
     ],
     suitedFor: ["Căn hộ cao cấp", "Nhà phố cải tạo", "Biệt thự hoặc second home"],
+    faqs: [
+      {
+        question: "Có thể chỉ thuê thiết kế mà chưa thi công không?",
+        answer:
+          "Có. Hồ sơ thiết kế được chuẩn hóa để khách hàng có thể triển khai với đội thi công khác nếu cần, dù chúng tôi luôn khuyến nghị một đầu mối đồng bộ hơn.",
+      },
+    ],
     image:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
   },
@@ -72,6 +86,13 @@ export const services: Service[] = [
       "Công trình yêu cầu hoàn thiện cao",
       "Dự án muốn bám sát hình ảnh thiết kế",
     ],
+    faqs: [
+      {
+        question: "Làm sao kiểm soát phát sinh khi thi công?",
+        answer:
+          "Chúng tôi khóa vật liệu, timeline, hồ sơ và cơ chế nghiệm thu theo mốc rõ ràng để giảm tối đa phát sinh cảm tính trong quá trình triển khai.",
+      },
+    ],
     image:
       "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80",
   },
@@ -94,6 +115,13 @@ export const services: Service[] = [
       "Dễ kiểm soát bảo trì và nâng cấp sau này",
     ],
     suitedFor: ["Biệt thự", "Căn hộ penthouse", "Không gian cần tỷ lệ bespoke"],
+    faqs: [
+      {
+        question: "Studio có thể làm bespoke ở mức nào?",
+        answer:
+          "Từ hệ tủ lớn, island bếp, bàn console cho tới các chi tiết ốp và phần tay nắm hoàn thiện riêng theo từng dự án.",
+      },
+    ],
     image:
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80",
   },

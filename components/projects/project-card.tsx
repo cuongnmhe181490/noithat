@@ -12,7 +12,7 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/8 bg-white/74 shadow-[0_24px_60px_rgba(22,18,14,0.08)]",
+        "group flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/8 bg-white/74 shadow-[0_24px_60px_rgba(22,18,14,0.08)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_84px_rgba(22,18,14,0.12)]",
         featured && "lg:col-span-7",
       )}
     >
@@ -45,13 +45,33 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
         </div>
         <div className="space-y-3">
           <Link href={`/projects/${project.slug}`}>
-            <h3 className="font-serif text-3xl text-[var(--color-charcoal)] transition group-hover:text-[var(--color-walnut)]">
+            <h3 className="font-serif text-3xl text-[var(--color-charcoal)] transition group-hover:text-[var(--color-walnut)] md:text-[2.2rem]">
               {project.name}
             </h3>
           </Link>
           <p className="text-sm leading-7 text-[var(--color-muted)]">
             {project.summary}
           </p>
+        </div>
+        <div className="grid gap-3 rounded-[1.4rem] bg-[rgba(21,19,17,0.03)] p-4 sm:grid-cols-3">
+          <div>
+            <p className="text-[0.64rem] uppercase tracking-[0.22em] text-[var(--color-muted)]">
+              Phong cách
+            </p>
+            <p className="mt-2 text-sm text-[var(--color-charcoal)]">{project.style}</p>
+          </div>
+          <div>
+            <p className="text-[0.64rem] uppercase tracking-[0.22em] text-[var(--color-muted)]">
+              Diện tích
+            </p>
+            <p className="mt-2 text-sm text-[var(--color-charcoal)]">{project.area}</p>
+          </div>
+          <div>
+            <p className="text-[0.64rem] uppercase tracking-[0.22em] text-[var(--color-muted)]">
+              Địa điểm
+            </p>
+            <p className="mt-2 text-sm text-[var(--color-charcoal)]">{project.location}</p>
+          </div>
         </div>
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (

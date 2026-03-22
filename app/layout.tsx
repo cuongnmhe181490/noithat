@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { StickyConsultation } from "@/components/sticky-consultation";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -59,6 +60,7 @@ export default function RootLayout({
         <div className="ambient-grid fixed inset-0 -z-10 opacity-80" />
         <div className="ambient-glow fixed inset-x-0 top-0 -z-10 h-[42rem]" />
         <SiteHeader />
+        <StickyConsultation />
         <div className="flex min-h-screen flex-col">
           <main className="flex-1 pt-0">{children}</main>
           <SiteFooter />

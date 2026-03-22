@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
-import { ContactCta } from "@/components/contact-cta";
 import { ConsultationForm } from "@/components/consultation-form";
+import { ContactCta } from "@/components/contact-cta";
+import { ProjectStoryNav } from "@/components/project-story-nav";
+import { RelatedProjects } from "@/components/related-projects";
 import { SectionHeading } from "@/components/section-heading";
 import { getProjectBySlug, projects } from "@/data/projects";
 
@@ -22,9 +24,7 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
 
   if (!project) {
-    return {
-      title: "Dự án không tồn tại",
-    };
+    return { title: "Dự án không tồn tại" };
   }
 
   return {
@@ -41,158 +41,194 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const relatedProjects = projects
+    .filter(
+      (item) =>
+        item.slug !== project.slug &&
+        (item.typeKey === project.typeKey || item.styleKey === project.styleKey),
+    )
+    .slice(0, 3);
+
   return (
-    <article className="pb-24 pt-24">
-      <section className="relative h-[86vh] min-h-[38rem] overflow-hidden">
+    <article className="pb-24 pt-18">
+      <section className="section-shell luxury-frame grain-overlay relative min-h-[88vh] overflow-hidden rounded-[2.8rem]">
         <Image
           src={project.heroImage}
           alt={project.name}
           fill
           priority
-          className="object-cover"
           sizes="100vw"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/30 to-[rgba(17,15,13,0.82)]" />
-        <div className="section-shell relative flex h-full flex-col justify-end pb-14 text-[var(--color-cream)] md:pb-18">
-          <span className="eyebrow border-white/20 bg-white/10 text-white">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,8,7,0.08),rgba(10,8,7,0.34)_34%,rgba(10,8,7,0.88))]" />
+        <div className="relative flex min-h-[88vh] flex-col justify-end px-6 pb-8 pt-24 text-[var(--color-ivory)] md:px-10 md:pb-10">
+          <span className="eyebrow border-white/16 bg-white/10 text-white">
             {project.type}
           </span>
           <h1 className="mt-6 max-w-5xl font-serif text-5xl leading-none md:text-7xl">
             {project.name}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/76 md:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 md:text-lg">
             {project.summary}
           </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-5">
+            {[
+              ["Loại công trình", project.type],
+              ["Diện tích", project.area],
+              ["Phong cách", project.style],
+              ["Địa điểm", project.location],
+              ["Năm hoàn thiện", project.year],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-[1.6rem] border border-white/10 bg-white/8 p-4">
+                <p className="text-[0.65rem] uppercase tracking-[0.24em] text-white/50">
+                  {label}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-white">{value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section-shell grid gap-6 py-14 md:grid-cols-2 xl:grid-cols-4">
-        {[
-          ["Loại công trình", project.type],
-          ["Diện tích", project.area],
-          ["Phong cách", project.style],
-          ["Địa điểm", project.location],
-        ].map(([label, value]) => (
-          <div
-            key={label}
-            className="rounded-[2rem] border border-black/8 bg-white/70 p-6 backdrop-blur"
-          >
-            <p className="text-xs uppercase tracking-[0.26em] text-[var(--color-muted)]">
-              {label}
-            </p>
-            <p className="mt-3 text-lg font-medium text-[var(--color-charcoal)]">
-              {value}
-            </p>
-          </div>
-        ))}
-      </section>
+      <ProjectStoryNav />
 
-      <section className="section-shell grid gap-8 py-8 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="space-y-5">
+      <section id="concept" className="section-shell section-pad grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="space-y-6">
           <SectionHeading
-            eyebrow="Concept"
-            title="Tinh thần thiết kế"
+            eyebrow="Concept story"
+            title="Một case study được kể bằng vấn đề, giải pháp và cảm giác sống cuối cùng."
             description={project.concept}
             align="left"
           />
-          <div className="space-y-4 rounded-[2rem] border border-black/8 bg-[var(--color-panel)] p-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-muted)]">
-              Vật liệu chủ đạo
+          <div className="luxury-card rounded-[2rem] p-6">
+            <p className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+              Thách thức bài toán không gian
             </p>
-            <ul className="space-y-3 text-sm leading-7 text-[var(--color-muted)]">
-              {project.materials.map((material) => (
-                <li
-                  key={material}
-                  className="flex items-center gap-3 border-b border-black/6 pb-3 last:border-0 last:pb-0"
-                >
-                  <span className="h-2 w-2 rounded-full bg-[var(--color-gold)]" />
-                  {material}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
+              {project.challenge}
+            </p>
+          </div>
+          <div className="luxury-card rounded-[2rem] p-6">
+            <p className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+              Giải pháp thiết kế
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
+              {project.solution}
+            </p>
           </div>
         </div>
+
         <div className="grid gap-4 md:grid-cols-2">
           {project.gallery.slice(0, 4).map((image, index) => (
             <div
               key={image}
-              className={`relative overflow-hidden rounded-[2rem] ${
-                index === 0 ? "md:col-span-2 md:h-[28rem]" : "h-[18rem]"
-              }`}
+              className={`relative overflow-hidden rounded-[2rem] ${index === 0 ? "md:col-span-2 h-[28rem]" : "h-[20rem]"}`}
             >
               <Image
                 src={image}
                 alt={`${project.name} ${index + 1}`}
                 fill
-                loading="lazy"
-                className="object-cover transition duration-700 hover:scale-[1.03]"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="section-shell py-8">
-        <BeforeAfterSlider
-          beforeImage={project.beforeAfter.before}
-          afterImage={project.beforeAfter.after}
-          beforeLabel="Hiện trạng"
-          afterLabel="Sau hoàn thiện"
-          title="Biến chuyển không gian bằng tỷ lệ, vật liệu và ánh sáng."
-          description="Một góc nhìn trực quan để cảm nhận mức độ thay đổi sau khi concept được hiện thực hóa."
-        />
+      <section id="materials" className="section-shell section-tight grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="luxury-card rounded-[2rem] p-7">
+          <SectionHeading
+            eyebrow="Material palette"
+            title="Vật liệu chính và những chi tiết đắt giá tạo nên chiều sâu của công trình."
+            align="left"
+          />
+          <ul className="mt-6 space-y-3">
+            {project.materials.map((material) => (
+              <li
+                key={material}
+                className="flex items-center gap-3 border-b border-black/6 pb-3 text-sm leading-7 text-[var(--color-muted)] last:border-0"
+              >
+                <span className="h-2 w-2 rounded-full bg-[var(--color-gold)]" />
+                {material}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="luxury-card rounded-[2rem] p-7">
+          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+            Signature details
+          </p>
+          <div className="mt-5 grid gap-4">
+            {project.signatureDetails.map((detail, index) => (
+              <div
+                key={detail}
+                className="rounded-[1.6rem] bg-[rgba(21,19,17,0.03)] p-5"
+              >
+                <p className="text-[0.66rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+                  0{index + 1}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-[var(--color-charcoal)]">
+                  {detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section className="section-shell py-10">
+      <section id="gallery" className="section-shell section-pad">
         <SectionHeading
-          eyebrow="Gallery"
-          title="Khoảnh khắc hoàn thiện"
-          description="Bộ hình toàn màn hình được lựa chọn để kể lại hành trình từ chất liệu thô đến không gian sống có chiều sâu."
+          eyebrow="Fullscreen gallery"
+          title="Nhịp ảnh lớn để người xem cảm nhận không gian như đang hiện diện bên trong."
+          description="Gallery được dàn dựng với các tỷ lệ ảnh khác nhau để tạo cảm giác editorial thay vì một lưới ảnh đồng đều."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {project.gallery.map((image, index) => (
             <div
               key={`${image}-${index}`}
               className={`relative overflow-hidden rounded-[2rem] ${
-                index % 3 === 0 ? "md:col-span-2 h-[32rem]" : "h-[20rem]"
+                index % 3 === 0 ? "md:col-span-2 h-[36rem]" : "h-[24rem]"
               }`}
             >
               <Image
                 src={image}
                 alt={`${project.name} gallery ${index + 1}`}
                 fill
-                loading="lazy"
-                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="section-shell grid gap-8 py-14 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <SectionHeading
-            eyebrow="Timeline"
-            title="Tiến độ triển khai"
-            description="Mỗi giai đoạn được kiểm soát chặt để đảm bảo chất lượng hoàn thiện đồng nhất với concept đã duyệt."
-            align="left"
-          />
-        </div>
+      <section className="section-shell section-tight">
+        <BeforeAfterSlider
+          beforeImage={project.beforeAfter.before}
+          afterImage={project.beforeAfter.after}
+          beforeLabel="Hiện trạng"
+          afterLabel="Sau hoàn thiện"
+          title="Mức độ thay đổi được tạo ra bằng tỷ lệ, ánh sáng và ngôn ngữ vật liệu."
+          description={project.beforeAfter.caption}
+        />
+      </section>
+
+      <section id="timeline" className="section-shell section-pad grid gap-8 lg:grid-cols-[0.76fr_1.24fr]">
+        <SectionHeading
+          eyebrow="Timeline triển khai"
+          title="Một dự án cao cấp cần được kiểm soát bằng quy trình rõ, không chỉ bằng hình ảnh đẹp."
+          description="Timeline dưới đây cho thấy cách dự án đi từ khảo sát, concept, hồ sơ kỹ thuật đến thi công và hoàn thiện cuối cùng."
+          align="left"
+        />
         <div className="space-y-4">
           {project.timeline.map((item, index) => (
-            <div
-              key={item.phase}
-              className="rounded-[2rem] border border-black/8 bg-white/80 p-6"
-            >
+            <article key={item.phase} className="luxury-card rounded-[2rem] p-6">
               <div className="flex items-center justify-between gap-4">
-                <span className="text-xs uppercase tracking-[0.24em] text-[var(--color-muted)]">
+                <span className="text-[0.66rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
                   0{index + 1}
                 </span>
-                <span className="text-sm text-[var(--color-muted)]">
-                  {item.duration}
-                </span>
+                <span className="text-sm text-[var(--color-muted)]">{item.duration}</span>
               </div>
               <h2 className="mt-4 font-serif text-3xl text-[var(--color-charcoal)]">
                 {item.phase}
@@ -200,12 +236,17 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                 {item.details}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="section-shell grid gap-8 pb-10 pt-4 lg:grid-cols-[1.1fr_0.9fr]">
+      <RelatedProjects projects={relatedProjects} />
+
+      <section
+        id="lead"
+        className="section-shell grid gap-8 pb-24 pt-4 lg:grid-cols-[1.08fr_0.92fr]"
+      >
         <ContactCta />
         <ConsultationForm />
       </section>

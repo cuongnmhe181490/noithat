@@ -18,6 +18,23 @@ export type ProjectCategory = {
   metric: string;
 };
 
+export type MaterialStory = {
+  name: string;
+  description: string;
+  tone: string;
+  image: string;
+};
+
+export type TrustIndicator = {
+  title: string;
+  description: string;
+};
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type SignaturePillar = {
   title: string;
   description: string;
@@ -100,7 +117,10 @@ export type Project = {
   featured: boolean;
   summary: string;
   concept: string;
+  challenge: string;
+  solution: string;
   materials: string[];
+  signatureDetails: string[];
   heroImage: string;
   gallery: string[];
   beforeAfter: BeforeAfterSet;
@@ -122,6 +142,7 @@ export type Service = {
   deliverables: string[];
   outcomes: string[];
   suitedFor: string[];
+  faqs: FaqItem[];
   image: string;
 };
 
