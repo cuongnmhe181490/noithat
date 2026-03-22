@@ -21,11 +21,11 @@ export function SiteHeader() {
       <div className="section-shell pointer-events-auto pt-4">
         <div
           className={cn(
-            "flex items-center justify-between rounded-full border px-4 py-2.5 transition duration-300 md:px-5",
+            "flex items-center justify-between rounded-full border px-4 py-2 transition duration-300 md:px-5",
             isHeroState &&
-              "border-white/10 bg-[rgba(14,12,10,0.8)] text-white shadow-[0_12px_30px_rgba(10,8,7,0.14)] backdrop-blur-xl",
+              "border-white/10 bg-[rgba(14,12,10,0.8)] text-white shadow-[0_10px_24px_rgba(10,8,7,0.12)] backdrop-blur-xl",
             isStickyState &&
-              "border-black/8 bg-[rgba(247,242,236,0.98)] text-[var(--color-charcoal)] shadow-[0_10px_26px_rgba(22,18,14,0.06)] backdrop-blur-xl",
+              "border-black/8 bg-[rgba(247,242,236,0.985)] text-[var(--color-charcoal)] shadow-[0_8px_20px_rgba(22,18,14,0.05)] backdrop-blur-xl",
           )}
         >
           <Link href="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
@@ -58,7 +58,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm transition",
+                  "rounded-full px-4 py-2 text-[0.88rem] transition",
                   isActive(item.href)
                     ? isHeroState
                       ? "border border-white/14 bg-white/10 text-white"
@@ -76,7 +76,7 @@ export function SiteHeader() {
           <div className="hidden items-center gap-2.5 lg:flex">
             <Link
               className={cn(
-                "inline-flex items-center justify-center rounded-full border px-4 py-2.5 text-sm transition",
+                "inline-flex items-center justify-center rounded-full border px-4 py-2.5 text-[0.88rem] transition",
                 isHeroState &&
                   "border-white/16 bg-white/6 text-white hover:bg-white/10",
                 isStickyState &&
@@ -88,7 +88,7 @@ export function SiteHeader() {
             </Link>
             <Link
               className={cn(
-                "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm transition",
+                "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-[0.88rem] transition",
                 isHeroState &&
                   "bg-[var(--color-ivory)] text-[var(--color-charcoal)] shadow-[0_12px_28px_rgba(8,7,6,0.12)] hover:bg-white",
                 isStickyState && "button-primary !px-4 !py-2.5",

@@ -12,7 +12,6 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
         <SectionHeading
           eyebrow="Lookbook journal"
           title="Một journal tốt nên kéo người xem ở lại nhẹ nhàng, không bắt họ đọc quá nhiều."
-          description="Ảnh đi trước, metadata gọn và excerpt ngắn giúp section này dễ scan hơn."
           align="left"
         />
         <Link href="/blog" className="button-secondary hidden md:inline-flex">

@@ -173,9 +173,8 @@ export function ProjectsShowcase({
             <p className="font-serif text-4xl text-[var(--color-charcoal)]">
               Chưa có dự án khớp hoàn toàn.
             </p>
-            <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
-              Hãy mở rộng bộ lọc hoặc để lại nhu cầu, chúng tôi sẽ gợi ý những
-              case study gần nhất với diện tích và gu sống của bạn.
+            <p className="mt-4 text-sm leading-6 text-[var(--color-muted)]">
+              Hãy mở rộng bộ lọc hoặc để lại nhu cầu.
             </p>
           </div>
         ) : null}

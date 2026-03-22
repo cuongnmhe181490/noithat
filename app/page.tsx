@@ -20,7 +20,6 @@ export default function Home() {
       <ProjectsShowcase
         title="Một selection ngắn để người xem muốn mở từng case study."
         eyebrow="Signature projects"
-        description="Ít text hơn, nhiều hình hơn và một lối vào rõ ràng đến từng dự án."
         projects={projects.slice(0, 4)}
         compact
       />

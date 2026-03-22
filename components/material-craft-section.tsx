@@ -15,7 +15,6 @@ export function MaterialCraftSection({
           <SectionHeading
             eyebrow="Vật liệu và craftsmanship"
             title="Đây là nơi thương hiệu được cảm bằng tay và ánh sáng, không phải bằng lời giới thiệu."
-            description="Chỉ giữ vài lớp vật liệu đủ mạnh để người xem cảm được độ tinh."
             align="left"
           />
         </div>

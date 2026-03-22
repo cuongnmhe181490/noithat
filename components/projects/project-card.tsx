@@ -72,11 +72,6 @@ export function ProjectCard({
               {project.name}
             </h3>
           </Link>
-          {immersive ? (
-            <p className="max-w-xl text-sm leading-6 text-[var(--color-muted)] line-clamp-1">
-              {project.summary}
-            </p>
-          ) : null}
         </div>
 
         <div className="mt-auto flex items-center justify-between gap-3 border-t border-black/7 pt-4">

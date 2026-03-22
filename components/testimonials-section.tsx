@@ -12,7 +12,6 @@ export function TestimonialsSection({
       <SectionHeading
         eyebrow="Client voice"
         title="Một vài phản hồi đủ để người xem tin vào chất lượng sau bàn giao."
-        description="Section này nên tạo tin cậy nhanh, không biến thành một bức tường lời khen."
       />
       <div className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
         {testimonials.map((item, index) => (

@@ -18,7 +18,7 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="Private showroom booking"
             title="Một luồng tư vấn nên khiến khách hàng cảm thấy nhẹ, rõ và đáng để để lại thông tin."
-            description="Giới thiệu, trust cue và form được tách nhịp rõ để trải nghiệm điền brief dễ thở hơn."
+            description="Giới thiệu, trust cue và form được tách nhịp rõ để trải nghiệm điền brief dễ thở."
             align="left"
           />
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
 
           <div className="surface-soft rounded-[1.8rem] p-6">
             <p className="section-kicker">Trust cues</p>
-            <ul className="mt-4 space-y-2 text-sm leading-7 text-[var(--color-muted)]">
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-[var(--color-muted)]">
               <li>Phản hồi sơ bộ trong vòng 24 giờ làm việc.</li>
               <li>Tư vấn theo diện tích, timeline và ngân sách thực tế.</li>
               <li>Ưu tiên lịch hẹn riêng tại showroom hoặc online nếu ở xa.</li>

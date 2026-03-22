@@ -21,7 +21,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Tailored services"
             title="Mỗi dịch vụ là một cách tiếp cận khác nhau cho cùng một mục tiêu: tạo ra không gian sống đúng gu và triển khai được đến cùng."
-            description="Giúp người dùng hiểu rất nhanh đâu là lối vào phù hợp với mình."
+            description="Giúp người dùng hiểu nhanh đâu là lối vào phù hợp."
             align="left"
           />
           <div className="rounded-[2rem] border border-black/8 bg-[rgba(255,255,255,0.3)] p-6">
@@ -29,20 +29,20 @@ export default function ServicesPage() {
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <div>
                 <p className="text-sm font-medium text-[var(--color-charcoal)]">Chưa rõ hướng đi</p>
-                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
-                  Bắt đầu bằng tư vấn concept để khóa gu thẩm mỹ và mức đầu tư.
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
+                  Bắt đầu bằng tư vấn concept.
                 </p>
               </div>
               <div>
                 <p className="text-sm font-medium text-[var(--color-charcoal)]">Đã có mặt bằng</p>
-                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
-                  Đi thẳng vào thiết kế trọn gói để kiểm soát công năng, ánh sáng và hồ sơ.
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
+                  Đi thẳng vào thiết kế trọn gói.
                 </p>
               </div>
               <div>
                 <p className="text-sm font-medium text-[var(--color-charcoal)]">Cần một đầu mối rõ</p>
-                <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">
-                  Chọn thi công trọn gói hoặc bespoke để giữ chất lượng đến lớp hoàn thiện cuối.
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
+                  Chọn thi công trọn gói hoặc bespoke.
                 </p>
               </div>
             </div>

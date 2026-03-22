@@ -16,12 +16,11 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Atelier profile"
             title="Điều chúng tôi theo đuổi không phải là làm cho không gian trông đắt tiền, mà là khiến nó sống lâu vẫn thấy đúng."
-            description="Mộc Du Ký Atelier làm việc như một studio biên tập: giữ lại những gì thật sự cần để không gian có chiều sâu và đi đến công trình hoàn thiện cuối cùng."
+            description="Mộc Du Ký Atelier làm việc như một studio biên tập: giữ lại những gì thật sự cần."
             align="left"
           />
-          <p className="max-w-lg text-sm leading-7 text-[var(--color-muted)]">
-            Khác biệt không nằm ở việc dùng nhiều vật liệu đắt, mà ở cách chọn đúng tỷ lệ,
-            đúng mức hoàn thiện và đúng cảm giác sử dụng cho từng nhóm khách hàng.
+          <p className="max-w-md text-sm leading-6 text-[var(--color-muted)]">
+            Khác biệt nằm ở cách chọn đúng tỷ lệ, đúng mức hoàn thiện và đúng cảm giác sử dụng.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -36,16 +35,14 @@ export default function AboutPage() {
           </div>
           <div className="surface-soft rounded-[2rem] p-6">
             <p className="section-kicker">Showroom</p>
-            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
-              Không gian tiếp khách được chuẩn bị theo lịch hẹn riêng để việc chọn vật liệu
-              và trao đổi direction diễn ra đủ sâu, đủ tĩnh.
+            <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+              Không gian tiếp khách theo lịch hẹn riêng để việc chọn vật liệu diễn ra đủ sâu và đủ tĩnh.
             </p>
           </div>
           <div className="surface-soft rounded-[2rem] p-6">
             <p className="section-kicker">Xưởng</p>
-            <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
-              Xưởng giúp những quyết định trên bản vẽ đi được đến lớp hoàn thiện thật, với
-              độ chính xác và khả năng bespoke cao hơn.
+            <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+              Xưởng giúp quyết định trên bản vẽ đi được đến lớp hoàn thiện thật.
             </p>
           </div>
         </div>
@@ -86,10 +83,8 @@ export default function AboutPage() {
           <h2 className="mt-4 max-w-3xl font-serif text-[3rem] leading-[1] text-[var(--color-charcoal)]">
             Cân bằng giữa cảm xúc thẩm mỹ, công năng sống và khả năng thực thi.
           </h2>
-          <p className="mt-5 max-w-[58ch] text-sm leading-7 text-[var(--color-muted)]">
-            Mỗi dự án được đặt trên ba lớp cùng lúc: người sống trong đó là ai, không
-            gian cần tạo ra cảm giác gì, và công trình sẽ được hiện thực ra sao để không
-            mất đi tinh thần ban đầu.
+          <p className="mt-5 max-w-[52ch] text-sm leading-6 text-[var(--color-muted)]">
+            Mỗi dự án được đặt trên ba lớp: người sống trong đó là ai, không gian cần tạo ra cảm giác gì, và công trình sẽ được hiện thực ra sao.
           </p>
         </div>
         <div className="grid gap-4">

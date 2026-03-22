@@ -8,10 +8,10 @@ export function ContactCta() {
         Private showroom experience
       </span>
       <h2 className="mt-6 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.95]">
-        Đặt một cuộc hẹn được chuẩn bị riêng cho không gian của bạn.
+        Đặt một cuộc hẹn riêng cho không gian của bạn.
       </h2>
-      <p className="mt-5 max-w-lg text-[0.98rem] leading-7 text-white/74">
-        Buổi làm việc đầu tiên giúp bạn nhìn rõ hướng đi, phạm vi công việc và mức đầu tư phù hợp.
+      <p className="mt-5 max-w-md text-[0.95rem] leading-6 text-white/74">
+        Buổi làm việc đầu tiên giúp bạn nhìn rõ hướng đi và mức đầu tư phù hợp.
       </p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -26,7 +26,7 @@ export function ContactCta() {
       </div>
 
       <div className="mt-6 rounded-[1.6rem] border border-white/10 bg-white/6 p-5 text-sm leading-6 text-white/68">
-        Phản hồi sơ bộ trong vòng 24 giờ làm việc. Ưu tiên lịch hẹn riêng cho các dự án có nhu cầu thực trong 1 đến 6 tháng tới.
+        Phản hồi sơ bộ trong vòng 24 giờ làm việc.
       </div>
 
       <div className="mt-8 flex flex-wrap gap-4">
