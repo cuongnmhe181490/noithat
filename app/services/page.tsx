@@ -1,93 +1,97 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ConsultationForm } from "@/components/consultation-form";
 import { ContactCta } from "@/components/contact-cta";
 import { FaqList } from "@/components/faq-list";
-import { ProcessSection } from "@/components/process-section";
 import { SectionHeading } from "@/components/section-heading";
-import { processSteps } from "@/data/site";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Dịch vụ",
   description:
-    "Dịch vụ nội thất cao cấp được trình bày như một hệ tư vấn chiến lược: rõ lợi ích, rõ deliverables, rõ cách triển khai.",
+    "Trang dịch vụ được cân lại theo hướng tư vấn cao cấp: ít brochure hơn, rõ tình huống sử dụng hơn, và rõ bước tiếp theo hơn.",
 };
 
 export default function ServicesPage() {
   return (
     <>
       <section className="section-shell section-pad">
-        <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="max-w-4xl">
           <SectionHeading
             eyebrow="Tailored services"
-            title="Dịch vụ được thiết kế như một hệ giải pháp, không phải một bảng liệt kê hạng mục."
-            description="Mỗi phạm vi làm việc đều được mô tả theo giá trị thật với khách hàng: giải quyết điều gì, phù hợp khi nào và tạo ra đầu ra gì."
+            title="Mỗi dịch vụ nên giúp khách hàng hiểu rất nhanh khi nào nó phù hợp và họ sẽ nhận được điều gì."
+            description="Thay vì lặp một cấu trúc block giống nhau, chúng tôi trình bày dịch vụ như các điểm vào khác nhau cho cùng một hệ tư vấn cao cấp."
             align="left"
           />
-          <div className="grid gap-5">
-            {services.map((service) => (
-              <article
-                key={service.slug}
-                className="luxury-card grid gap-5 overflow-hidden rounded-[2rem] p-4 md:grid-cols-[0.72fr_1.28fr] md:p-5"
-              >
-                <div className="relative min-h-[15rem] overflow-hidden rounded-[1.7rem]">
+        </div>
+
+        <div className="mt-12 grid gap-8">
+          {services.map((service, index) => (
+            <article
+              key={service.slug}
+              className="luxury-card grid gap-6 overflow-hidden p-4 md:p-5 lg:grid-cols-[0.52fr_0.48fr]"
+            >
+              <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+                <div className="relative min-h-[20rem] overflow-hidden rounded-[1.8rem]">
                   <Image
                     src={service.image}
                     alt={service.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, 30vw"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="space-y-5">
+              </div>
+              <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                <p className="section-kicker">{service.slug.replaceAll("-", " ")}</p>
+                <h2 className="mt-4 font-serif text-[3rem] leading-none text-[var(--color-charcoal)]">
+                  {service.name}
+                </h2>
+                <p className="mt-4 max-w-xl text-sm leading-8 text-[var(--color-muted)]">
+                  {service.description}
+                </p>
+
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
                   <div>
-                    <p className="text-[0.66rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
-                      {service.slug.replaceAll("-", " ")}
-                    </p>
-                    <h2 className="mt-3 font-serif text-4xl leading-none text-[var(--color-charcoal)]">
-                      {service.name}
-                    </h2>
-                    <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
-                      {service.description}
-                    </p>
+                    <p className="section-kicker">Khi nào nên chọn</p>
+                    <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
+                      {service.suitedFor.slice(0, 2).map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <p className="text-[0.66rem] uppercase tracking-[0.22em] text-[var(--color-muted)]">
-                        Deliverables
-                      </p>
-                      <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
-                        {service.deliverables.map((item) => (
-                          <li key={item} className="flex gap-3">
-                            <span className="mt-2 h-2 w-2 rounded-full bg-[var(--color-gold)]" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="text-[0.66rem] uppercase tracking-[0.22em] text-[var(--color-muted)]">
-                        Phù hợp cho
-                      </p>
-                      <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
-                        {service.suitedFor.map((item) => (
-                          <li key={item} className="flex gap-3">
-                            <span className="mt-2 h-2 w-2 rounded-full bg-[var(--color-walnut)]" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div>
+                    <p className="section-kicker">Bạn nhận được</p>
+                    <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
+                      {service.deliverables.slice(0, 2).map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="section-kicker">Kết quả</p>
+                    <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
+                      {service.outcomes.slice(0, 2).map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Link href="/contact" className="button-primary">
+                    Nhận tư vấn cho dịch vụ này
+                  </Link>
+                  <Link href="/projects" className="button-secondary">
+                    Xem dự án liên quan
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
-
-      <ProcessSection steps={processSteps} />
 
       <FaqList
         eyebrow="FAQ"

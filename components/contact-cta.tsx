@@ -11,24 +11,24 @@ export function ContactCta() {
         Đặt một cuộc hẹn được chuẩn bị riêng cho không gian của bạn.
       </h2>
       <p className="mt-5 max-w-xl text-base leading-8 text-white/72">
-        Chúng tôi ưu tiên những buổi tư vấn sâu, nơi khách hàng có thể xem vật
-        liệu, thảo luận ngân sách và nhận định hướng concept phù hợp với nhịp
-        sống thực tế.
+        Mục tiêu của buổi làm việc đầu tiên là giúp bạn nhìn rõ hướng đi, thay vì
+        chỉ nhận một báo giá chung chung. Vì vậy mọi cuộc hẹn đều được chuẩn bị
+        theo brief thực tế từ trước.
       </p>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <div className="rounded-[1.6rem] border border-white/10 bg-white/8 p-5">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-white/54">
-            Hotline
-          </p>
+          <p className="section-kicker !text-white/54">Hotline</p>
           <p className="mt-3 text-lg">{siteConfig.phone}</p>
         </div>
         <div className="rounded-[1.6rem] border border-white/10 bg-white/8 p-5">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-white/54">
-            Showroom
-          </p>
+          <p className="section-kicker !text-white/54">Showroom</p>
           <p className="mt-3 text-lg">{siteConfig.showroom}</p>
         </div>
       </div>
+      <p className="mt-5 text-xs leading-6 text-white/54">
+        Cuộc hẹn đầu tiên thường kéo dài 45 đến 60 phút và tập trung vào diện tích,
+        mức đầu tư, timeline bàn giao và gu sống của gia chủ.
+      </p>
       <div className="mt-8 flex flex-wrap gap-4">
         <Link href="/contact" className="button-primary">
           Đặt lịch ngay

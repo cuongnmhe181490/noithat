@@ -20,11 +20,11 @@ export default function BlogPage() {
             Journal / Lookbook
           </span>
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-none md:text-7xl">
-            Một luxury editorial journal dành cho những quyết định đầu tư có gu.
+            Một editorial journal nên gợi cảm hứng trước khi nó thuyết phục.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-white/74 md:text-lg">
-            Nơi khách hàng có thể đọc về vật liệu, ánh sáng, nhịp sống và những
-            lựa chọn thẩm mỹ trước khi bước vào dự án thực tế.
+            Ở đây, bài viết được trình bày theo nhịp magazine: ảnh dẫn cảm xúc trước,
+            metadata gọn và typography đủ thoáng để người xem muốn đọc tiếp.
           </p>
         </div>
       </div>

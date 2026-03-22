@@ -95,11 +95,11 @@ img {
 }
 
 .section-pad {
-  padding-block: clamp(4.5rem, 7vw, 8rem);
+  padding-block: clamp(5.5rem, 8vw, 9rem);
 }
 
 .section-tight {
-  padding-block: clamp(2.5rem, 4vw, 4rem);
+  padding-block: clamp(3.25rem, 5vw, 5rem);
 }
 
 .eyebrow {
@@ -145,6 +145,13 @@ img {
   background: var(--color-panel);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(20px);
+}
+
+.section-kicker {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-muted);
 }
 
 .luxury-frame {

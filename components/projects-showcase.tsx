@@ -74,14 +74,14 @@ export function ProjectsShowcase({
   return (
     <section className={cn("section-pad", compact && "section-tight")}>
       <div className="section-shell">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
             eyebrow={eyebrow}
             title={title}
             description={description}
             align="left"
           />
-          <div className="luxury-card grid gap-4 rounded-[2rem] p-5 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="luxury-card grid gap-4 rounded-[2rem] p-5 md:grid-cols-[1fr_15rem] md:items-end">
             <label className="grid gap-2">
               <span className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
                 Tìm theo tên, địa điểm hoặc phong cách
@@ -114,13 +114,15 @@ export function ProjectsShowcase({
           </div>
         </div>
 
-        <div className="mt-8 space-y-5">
+        <div className="mt-8 space-y-4">
           <FilterRow label="Loại công trình" options={[allOption, ...options.categories]} active={activeType} onChange={setActiveType} />
           <FilterRow label="Phong cách" options={[allOption, ...options.styles]} active={activeStyle} onChange={setActiveStyle} />
-          <FilterRow label="Diện tích" options={[allOption, ...options.areas]} active={activeArea} onChange={setActiveArea} />
+          {!compact ? (
+            <FilterRow label="Diện tích" options={[allOption, ...options.areas]} active={activeArea} onChange={setActiveArea} />
+          ) : null}
         </div>
 
-        <div className="mt-8 flex items-center justify-between gap-4">
+        <div className="mt-7 flex items-center justify-between gap-4">
           <p className="text-sm text-[var(--color-muted)]">
             {filteredProjects.length} dự án phù hợp với tiêu chí hiện tại.
           </p>
@@ -138,7 +140,11 @@ export function ProjectsShowcase({
                 key={project.slug}
                 className={cn(index % 5 === 0 ? "lg:col-span-7" : "lg:col-span-5")}
               >
-                <ProjectCard project={project} featured={index % 5 === 0} />
+                <ProjectCard
+                  project={project}
+                  featured={index % 5 === 0}
+                  variant={compact ? "immersive" : "catalog"}
+                />
               </StaggerItem>
             ))}
           </StaggerList>

@@ -9,15 +9,15 @@ type CategoryStripProps = {
 
 export function CategoryStrip({ categories }: CategoryStripProps) {
   return (
-    <section className="section-shell py-10 md:py-14">
+    <section className="section-shell section-tight">
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {categories.map((category, index) => (
           <Reveal key={category.slug} delay={index * 0.05}>
             <Link
               href={`/projects?type=${category.slug}`}
-              className="group relative block overflow-hidden rounded-[2rem] border border-black/8 bg-white/72 p-5 shadow-[0_18px_48px_rgba(22,18,14,0.06)]"
+              className="group relative block overflow-hidden rounded-[2.2rem] border border-black/8 bg-[var(--color-coal)] p-3 shadow-[0_18px_48px_rgba(22,18,14,0.06)]"
             >
-              <div className="relative h-56 overflow-hidden rounded-[1.4rem]">
+              <div className="relative h-72 overflow-hidden rounded-[1.7rem]">
                 <Image
                   src={category.image}
                   alt={category.title}
@@ -25,16 +25,17 @@ export function CategoryStrip({ categories }: CategoryStripProps) {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition duration-700 group-hover:scale-[1.04]"
                 />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,8,7,0.08),rgba(10,8,7,0.68))]" />
               </div>
-              <div className="mt-5 space-y-3">
-                <h2 className="font-serif text-3xl text-[var(--color-charcoal)]">
+              <div className="absolute inset-x-0 bottom-0 p-7 text-[var(--color-ivory)]">
+                <p className="text-[0.66rem] uppercase tracking-[0.24em] text-white/58">
+                  {category.metric}
+                </p>
+                <h2 className="mt-3 font-serif text-4xl text-white">
                   {category.title}
                 </h2>
-                <p className="text-sm leading-7 text-[var(--color-muted)]">
+                <p className="mt-3 max-w-[16rem] text-sm leading-7 text-white/74">
                   {category.description}
-                </p>
-                <p className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
-                  {category.metric}
                 </p>
               </div>
             </Link>

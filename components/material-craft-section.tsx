@@ -10,20 +10,20 @@ export function MaterialCraftSection({
 }) {
   return (
     <section className="section-shell section-pad">
-      <div className="grid gap-8 lg:grid-cols-[0.84fr_1.16fr]">
+      <div className="grid gap-10 lg:grid-cols-[0.76fr_1.24fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHeading
             eyebrow="Vật liệu và craftsmanship"
-            title="Cảm giác đắt giá đến từ cách vật liệu được xử lý, không đến từ việc phô trương."
-            description="Thương hiệu nội thất cao cấp được cảm nhận mạnh nhất ở độ tinh của bề mặt, ánh sáng và cách các chi tiết nhỏ được hoàn thiện."
+            title="Đây là nơi thương hiệu được cảm bằng tay và ánh sáng, không phải bằng lời giới thiệu."
+            description="Chúng tôi chỉ giữ lại vài lớp vật liệu đủ mạnh để người xem cảm được độ tinh, thay vì biến section này thành một bảng thông số dài."
             align="left"
           />
         </div>
-        <div className="space-y-5">
+        <div className="space-y-4">
           {materials.map((item, index) => (
             <Reveal key={item.name} delay={index * 0.06}>
-              <article className="luxury-card grid gap-5 overflow-hidden p-4 md:grid-cols-[0.94fr_1.06fr] md:p-5">
-                <div className="relative h-64 overflow-hidden rounded-[1.7rem]">
+              <article className="luxury-card grid gap-5 overflow-hidden p-4 md:grid-cols-[1.05fr_0.95fr] md:p-5">
+                <div className="relative h-72 overflow-hidden rounded-[1.7rem]">
                   <Image
                     src={item.image}
                     alt={item.name}
@@ -34,10 +34,10 @@ export function MaterialCraftSection({
                 </div>
                 <div className="flex flex-col justify-between gap-5 p-1">
                   <div className="space-y-3">
-                    <p className="text-[0.68rem] uppercase tracking-[0.26em] text-[var(--color-muted)]">
+                    <p className="section-kicker">
                       {item.tone}
                     </p>
-                    <h3 className="font-serif text-4xl leading-none text-[var(--color-charcoal)]">
+                    <h3 className="font-serif text-[2.2rem] leading-none text-[var(--color-charcoal)]">
                       {item.name}
                     </h3>
                     <p className="text-sm leading-7 text-[var(--color-muted)]">

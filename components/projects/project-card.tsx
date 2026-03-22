@@ -6,9 +6,16 @@ import { cn } from "@/components/ui/cn";
 type ProjectCardProps = {
   project: Project;
   featured?: boolean;
+  variant?: "catalog" | "immersive";
 };
 
-export function ProjectCard({ project, featured }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  featured,
+  variant = "catalog",
+}: ProjectCardProps) {
+  const immersive = variant === "immersive";
+
   return (
     <article
       className={cn(
@@ -19,7 +26,15 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
       <MediaFrame
         src={project.heroImage}
         alt={project.name}
-        ratioClassName={featured ? "aspect-[16/11]" : "aspect-[4/3]"}
+        ratioClassName={
+          immersive
+            ? featured
+              ? "aspect-[16/11]"
+              : "aspect-[5/4]"
+            : featured
+              ? "aspect-[16/11]"
+              : "aspect-[4/3]"
+        }
         imageClassName="transition duration-700 group-hover:scale-[1.04]"
         caption={
           <div className="flex items-end justify-between gap-4">
@@ -49,11 +64,21 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
               {project.name}
             </h3>
           </Link>
-          <p className="text-sm leading-7 text-[var(--color-muted)]">
+          <p
+            className={cn(
+              "text-sm leading-7 text-[var(--color-muted)]",
+              immersive ? "line-clamp-2" : "line-clamp-3",
+            )}
+          >
             {project.summary}
           </p>
         </div>
-        <div className="grid gap-3 rounded-[1.4rem] bg-[rgba(21,19,17,0.03)] p-4 sm:grid-cols-3">
+        <div
+          className={cn(
+            "grid gap-3 rounded-[1.4rem] bg-[rgba(21,19,17,0.03)] p-4 sm:grid-cols-3",
+            immersive && "sm:grid-cols-2",
+          )}
+        >
           <div>
             <p className="text-[0.64rem] uppercase tracking-[0.22em] text-[var(--color-muted)]">
               Phong cách
@@ -73,7 +98,7 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
             <p className="mt-2 text-sm text-[var(--color-charcoal)]">{project.location}</p>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className={cn("flex flex-wrap gap-2", immersive && "hidden")}>
           {project.tags.map((tag) => (
             <span
               key={tag}
@@ -84,7 +109,9 @@ export function ProjectCard({ project, featured }: ProjectCardProps) {
           ))}
         </div>
         <div className="mt-auto flex items-center justify-between border-t border-black/8 pt-5">
-          <span className="text-sm text-[var(--color-muted)]">{project.location}</span>
+          <span className="text-sm text-[var(--color-muted)]">
+            {project.type} · {project.year}
+          </span>
           <Link className="button-secondary !px-4 !py-2" href={`/projects/${project.slug}`}>
             Xem chi tiết
           </Link>

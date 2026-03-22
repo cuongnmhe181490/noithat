@@ -10,16 +10,16 @@ export function TrustSection({
     <section className="section-shell section-pad">
       <SectionHeading
         eyebrow="Vì sao chọn chúng tôi"
-        title="Một studio có gu chỉ là điểm khởi đầu. Điều giữ khách hàng ở lại là năng lực thực thi."
-        description="Website này phải chuyển được cảm giác năng lực thật: tư duy, hệ thống, độ tinh và khả năng đi đến công trình hoàn thiện cuối cùng."
+        title="Ít lý do hơn, nhưng đủ mạnh để khách hàng thấy đây là một đội ngũ đáng để làm việc cùng."
+        description="Section này nên đọc nhanh và để lại cảm giác tin cậy, thay vì thêm một lớp brochure kể lại những điều đã nói ở nơi khác."
       />
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
+      <div className="mt-10 grid gap-4 lg:grid-cols-3">
         {items.map((item) => (
           <article
             key={item.title}
-            className="luxury-card rounded-[2rem] p-7"
+            className="luxury-card rounded-[2rem] p-6"
           >
-            <h3 className="font-serif text-3xl text-[var(--color-charcoal)]">
+            <h3 className="font-serif text-[2rem] leading-none text-[var(--color-charcoal)]">
               {item.title}
             </h3>
             <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">

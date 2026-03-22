@@ -8,18 +8,15 @@ export function TestimonialsSection({
   testimonials: Testimonial[];
 }) {
   return (
-    <section className="section-shell py-20 md:py-28">
+    <section className="section-shell section-pad">
       <SectionHeading
         eyebrow="Client voice"
-        title="Những lời xác nhận giá trị từ chính người sống trong không gian đó."
-        description="Chúng tôi xem phản hồi sau bàn giao là thước đo thật nhất cho chất lượng của một dự án cao cấp."
+        title="Những phản hồi nên được đọc như một dấu chấm tin cậy, không phải một bức tường lời khen."
+        description="Chúng tôi giữ section này gọn để người xem cảm được chất lượng sau bàn giao mà không bị mệt bởi quá nhiều trích dẫn dài."
       />
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        {testimonials.map((item) => (
-          <article
-            key={item.name}
-            className="rounded-[2rem] border border-black/8 bg-white/76 p-7 shadow-[0_18px_54px_rgba(22,18,14,0.06)]"
-          >
+      <div className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
+        {testimonials.map((item, index) => (
+          <article key={item.name} className="luxury-card rounded-[2rem] p-7">
             <div className="flex items-center gap-4">
               <div className="relative h-14 w-14 overflow-hidden rounded-full">
                 <Image
@@ -37,7 +34,13 @@ export function TestimonialsSection({
                 <p className="text-sm text-[var(--color-muted)]">{item.role}</p>
               </div>
             </div>
-            <p className="mt-6 font-serif text-3xl leading-10 text-[var(--color-charcoal)]">
+            <p
+              className={
+                index === 0
+                  ? "mt-6 font-serif text-[2.3rem] leading-[1.2] text-[var(--color-charcoal)]"
+                  : "mt-6 font-serif text-[1.8rem] leading-[1.25] text-[var(--color-charcoal)]"
+              }
+            >
               “{item.quote}”
             </p>
             <div className="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.22em] text-[var(--color-muted)]">
