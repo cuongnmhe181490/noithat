@@ -74,55 +74,73 @@ export function ProjectsShowcase({
   return (
     <section className={cn("section-pad", compact && "section-tight")}>
       <div className="section-shell">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="grid gap-8 xl:grid-cols-[0.8fr_1.2fr] xl:items-end">
           <SectionHeading
             eyebrow={eyebrow}
             title={title}
             description={description}
             align="left"
           />
-          <div className="luxury-card grid gap-4 rounded-[2rem] p-5 md:grid-cols-[1fr_15rem] md:items-end">
-            <label className="grid gap-2">
-              <span className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
-                Tìm theo tên, địa điểm hoặc phong cách
-              </span>
-              <input
-                value={query}
-                onChange={(event) =>
-                  startTransition(() => setQuery(event.target.value))
-                }
-                placeholder="Ví dụ: penthouse, Hồ Tràm, Japandi..."
-                className="field"
+
+          <div className="luxury-card rounded-[2rem] p-5 md:p-6">
+            <div className="grid gap-4 md:grid-cols-[1fr_14rem]">
+              <label className="grid gap-2">
+                <span className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+                  Tìm theo tên, địa điểm hoặc phong cách
+                </span>
+                <input
+                  value={query}
+                  onChange={(event) =>
+                    startTransition(() => setQuery(event.target.value))
+                  }
+                  placeholder="Ví dụ: penthouse, Hồ Tràm, Japandi..."
+                  className="field"
+                />
+              </label>
+              <label className="grid gap-2">
+                <span className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+                  Sắp xếp
+                </span>
+                <select
+                  value={sortKey}
+                  onChange={(event) => setSortKey(event.target.value as SortKey)}
+                  className="select min-w-52"
+                >
+                  <option value="featured">Ưu tiên nổi bật</option>
+                  <option value="latest">Mới nhất</option>
+                  <option value="area-desc">Diện tích lớn đến nhỏ</option>
+                  <option value="area-asc">Diện tích nhỏ đến lớn</option>
+                  <option value="name">Theo tên dự án</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="mt-5 grid gap-4 xl:grid-cols-3">
+              <FilterRow
+                label="Loại công trình"
+                options={[allOption, ...options.categories]}
+                active={activeType}
+                onChange={setActiveType}
               />
-            </label>
-            <label className="grid gap-2">
-              <span className="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
-                Sắp xếp
-              </span>
-              <select
-                value={sortKey}
-                onChange={(event) => setSortKey(event.target.value as SortKey)}
-                className="select min-w-52"
-              >
-                <option value="featured">Ưu tiên nổi bật</option>
-                <option value="latest">Mới nhất</option>
-                <option value="area-desc">Diện tích lớn đến nhỏ</option>
-                <option value="area-asc">Diện tích nhỏ đến lớn</option>
-                <option value="name">Theo tên dự án</option>
-              </select>
-            </label>
+              <FilterRow
+                label="Phong cách"
+                options={[allOption, ...options.styles]}
+                active={activeStyle}
+                onChange={setActiveStyle}
+              />
+              {!compact ? (
+                <FilterRow
+                  label="Diện tích"
+                  options={[allOption, ...options.areas]}
+                  active={activeArea}
+                  onChange={setActiveArea}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 space-y-4">
-          <FilterRow label="Loại công trình" options={[allOption, ...options.categories]} active={activeType} onChange={setActiveType} />
-          <FilterRow label="Phong cách" options={[allOption, ...options.styles]} active={activeStyle} onChange={setActiveStyle} />
-          {!compact ? (
-            <FilterRow label="Diện tích" options={[allOption, ...options.areas]} active={activeArea} onChange={setActiveArea} />
-          ) : null}
-        </div>
-
-        <div className="mt-7 flex items-center justify-between gap-4">
+        <div className="mt-8 flex items-center justify-between gap-4">
           <p className="text-sm text-[var(--color-muted)]">
             {filteredProjects.length} dự án phù hợp với tiêu chí hiện tại.
           </p>
@@ -134,7 +152,7 @@ export function ProjectsShowcase({
         {isFiltering ? <ProjectsSkeleton /> : null}
 
         {!isFiltering && filteredProjects.length > 0 ? (
-          <StaggerList className="mt-10 grid gap-5 lg:grid-cols-12">
+          <StaggerList className="mt-10 grid gap-6 lg:grid-cols-12">
             {filteredProjects.map((project, index) => (
               <StaggerItem
                 key={project.slug}
@@ -182,7 +200,7 @@ function FilterRow({
       <p className="text-[0.68rem] uppercase tracking-[0.28em] text-[var(--color-muted)]">
         {label}
       </p>
-      <div className="flex gap-3 overflow-x-auto pb-1">
+      <div className="flex gap-2 overflow-x-auto pb-1">
         {options.map((option) => {
           const isActive = active === option.value;
           return (
@@ -194,13 +212,10 @@ function FilterRow({
                 "shrink-0 rounded-full border px-4 py-2 text-sm transition",
                 isActive
                   ? "border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-ivory)]"
-                  : "border-black/8 bg-white/76 text-[var(--color-muted)] hover:bg-white",
+                  : "border-black/8 bg-white/82 text-[var(--color-charcoal)]/84 hover:bg-white",
               )}
             >
               {option.label}
-              {typeof option.count === "number" ? (
-                <span className="ml-2 text-xs opacity-70">{option.count}</span>
-              ) : null}
             </button>
           );
         })}
@@ -211,7 +226,7 @@ function FilterRow({
 
 function ProjectsSkeleton() {
   return (
-    <div className="mt-10 grid gap-5 lg:grid-cols-12">
+    <div className="mt-10 grid gap-6 lg:grid-cols-12">
       {Array.from({ length: 4 }).map((_, index) => (
         <div
           key={index}
@@ -220,10 +235,10 @@ function ProjectsSkeleton() {
             index % 3 === 0 ? "lg:col-span-7" : "lg:col-span-5",
           )}
         >
-          <div className="h-72 rounded-[1.6rem] bg-[rgba(21,19,17,0.06)]" />
-          <div className="mt-5 h-5 w-32 rounded-full bg-[rgba(21,19,17,0.06)]" />
+          <div className="h-80 rounded-[1.6rem] bg-[rgba(21,19,17,0.06)]" />
+          <div className="mt-5 h-4 w-40 rounded-full bg-[rgba(21,19,17,0.06)]" />
           <div className="mt-4 h-10 w-2/3 rounded-2xl bg-[rgba(21,19,17,0.08)]" />
-          <div className="mt-4 h-16 rounded-2xl bg-[rgba(21,19,17,0.05)]" />
+          <div className="mt-4 h-12 w-full rounded-2xl bg-[rgba(21,19,17,0.05)]" />
         </div>
       ))}
     </div>

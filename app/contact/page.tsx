@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
         <div className="space-y-8">
           <SectionHeading
             eyebrow="Private showroom booking"
@@ -23,8 +23,11 @@ export default function ContactPage() {
           />
 
           <div className="grid gap-4">
-            {contactDetails.map((item) => (
-              <div key={item.label} className="luxury-card rounded-[1.8rem] p-5">
+            {contactDetails.slice(0, 3).map((item, index) => (
+              <div
+                key={item.label}
+                className={index === 0 ? "luxury-card rounded-[1.8rem] p-5" : "rounded-[1.8rem] border border-black/8 bg-[rgba(255,255,255,0.28)] p-5"}
+              >
                 <p className="section-kicker">{item.label}</p>
                 <p className="mt-3 text-base leading-7 text-[var(--color-charcoal)]">
                   {item.value}
@@ -33,7 +36,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="luxury-card rounded-[1.8rem] p-6">
+          <div className="rounded-[1.8rem] border border-black/8 bg-[rgba(255,255,255,0.34)] p-6">
             <p className="section-kicker">Trust cues</p>
             <ul className="mt-4 space-y-2 text-sm leading-7 text-[var(--color-muted)]">
               <li>Phản hồi sơ bộ trong vòng 24 giờ làm việc.</li>

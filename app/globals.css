@@ -16,8 +16,13 @@
   --color-gold: #b08c64;
   --shadow-soft: 0 22px 64px rgba(32, 24, 18, 0.08);
   --shadow-hero: 0 40px 120px rgba(16, 13, 10, 0.28);
+  --shadow-card: 0 18px 44px rgba(22, 18, 14, 0.06);
   --radius-panel: 2rem;
   --radius-frame: 2.5rem;
+  --section-space: clamp(6.5rem, 9vw, 10rem);
+  --section-tight-space: clamp(4rem, 6vw, 5.75rem);
+  --container-main: 1320px;
+  --container-narrow: 1120px;
 }
 
 @theme inline {
@@ -90,16 +95,21 @@ img {
 }
 
 .section-shell {
-  width: min(100% - 2rem, 1380px);
+  width: min(100% - 2rem, var(--container-main));
   margin-inline: auto;
 }
 
 .section-pad {
-  padding-block: clamp(5.5rem, 8vw, 9rem);
+  padding-block: var(--section-space);
 }
 
 .section-tight {
-  padding-block: clamp(3.25rem, 5vw, 5rem);
+  padding-block: var(--section-tight-space);
+}
+
+.section-narrow {
+  width: min(100% - 2rem, var(--container-narrow));
+  margin-inline: auto;
 }
 
 .eyebrow {
@@ -143,7 +153,7 @@ img {
   border-radius: var(--radius-panel);
   border: 1px solid rgba(21, 19, 17, 0.08);
   background: var(--color-panel);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-card);
   backdrop-filter: blur(20px);
 }
 
@@ -168,8 +178,9 @@ img {
   justify-content: center;
   gap: 0.75rem;
   border-radius: 999px;
-  padding: 0.98rem 1.55rem;
+  padding: 1rem 1.6rem;
   font-size: 0.92rem;
+  letter-spacing: 0.01em;
   transition:
     transform 320ms ease,
     background-color 320ms ease,
@@ -192,7 +203,7 @@ img {
 
 .button-secondary {
   border: 1px solid rgba(21, 19, 17, 0.12);
-  background: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.66);
   color: var(--color-charcoal);
   backdrop-filter: blur(18px);
 }
@@ -213,8 +224,8 @@ img {
   width: 100%;
   border-radius: 1.35rem;
   border: 1px solid rgba(21, 19, 17, 0.09);
-  background: rgba(248, 242, 235, 0.92);
-  padding: 0.95rem 1rem;
+  background: rgba(249, 244, 238, 0.96);
+  padding: 1rem 1rem;
   color: var(--color-charcoal);
   transition:
     border-color 240ms ease,
@@ -266,6 +277,10 @@ img {
 @media (max-width: 767px) {
   .section-shell {
     width: min(100% - 1.25rem, 1380px);
+  }
+
+  .section-narrow {
+    width: min(100% - 1.25rem, var(--container-narrow));
   }
 
   .prose-shell p {

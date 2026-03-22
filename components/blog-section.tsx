@@ -11,8 +11,8 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
       <div className="flex items-end justify-between gap-6">
         <SectionHeading
           eyebrow="Lookbook journal"
-          title="Một editorial journal nên mời người dùng ở lại đọc, không chỉ cho thấy rằng website có blog."
-          description="Chúng tôi tăng nhịp hình ảnh, giảm sự đều tay của card và làm rõ hơn thứ tự đọc để section này giống một tạp chí thương hiệu hơn."
+          title="Một editorial journal nên mời người xem ở lại lâu hơn, thay vì chỉ lấp đầy menu bằng blog."
+          description="Ảnh đi trước, metadata gọn và nhịp đọc rõ giúp section này giống một tạp chí thương hiệu hơn là một danh sách bài viết."
           align="left"
         />
         <Link href="/blog" className="button-secondary hidden md:inline-flex">
@@ -20,30 +20,28 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
         </Link>
       </div>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-[1.18fr_0.82fr]">
+      <div className="mt-12 grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
         {featured ? (
-          <article className="luxury-card overflow-hidden rounded-[2.2rem]">
+          <article className="overflow-hidden rounded-[2.4rem] border border-black/8 bg-[rgba(255,252,247,0.64)] shadow-[0_20px_54px_rgba(22,18,14,0.08)]">
             <Link href={`/blog/${featured.slug}`} className="block">
-              <div className="relative h-[30rem]">
+              <div className="relative h-[31rem]">
                 <Image
                   src={featured.coverImage}
                   alt={featured.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-cover"
                 />
               </div>
             </Link>
-            <div className="space-y-4 p-7">
+            <div className="space-y-4 p-7 md:p-8">
               <div className="flex flex-wrap items-center gap-3 text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-muted)]">
                 <span>{featured.category}</span>
                 <span className="h-1 w-1 rounded-full bg-[var(--color-gold)]" />
                 <span>{featured.readingTime}</span>
-                <span className="h-1 w-1 rounded-full bg-[var(--color-gold)]" />
-                <span>{featured.publishedAt}</span>
               </div>
               <Link href={`/blog/${featured.slug}`}>
-                <h3 className="font-serif text-[2.8rem] leading-[1.02] text-[var(--color-charcoal)]">
+                <h3 className="max-w-3xl font-serif text-[3rem] leading-[1.02] text-[var(--color-charcoal)]">
                   {featured.title}
                 </h3>
               </Link>
@@ -55,16 +53,19 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
         ) : null}
 
         <div className="grid gap-5">
-          {rest.map((post) => (
-            <article key={post.slug} className="luxury-card overflow-hidden rounded-[2rem] p-4">
-              <div className="grid gap-4 md:grid-cols-[9rem_1fr]">
+          {rest.map((post, index) => (
+            <article
+              key={post.slug}
+              className={index === 0 ? "luxury-card rounded-[2rem] p-5" : "rounded-[2rem] border-b border-black/8 pb-5"}
+            >
+              <div className="grid gap-4 md:grid-cols-[10rem_1fr]">
                 <Link href={`/blog/${post.slug}`} className="block">
-                  <div className="relative h-36 overflow-hidden rounded-[1.4rem]">
+                  <div className="relative h-40 overflow-hidden rounded-[1.5rem]">
                     <Image
                       src={post.coverImage}
                       alt={post.title}
                       fill
-                      sizes="160px"
+                      sizes="180px"
                       className="object-cover"
                     />
                   </div>

@@ -20,40 +20,41 @@ export default function ServicesPage() {
         <div className="max-w-4xl">
           <SectionHeading
             eyebrow="Tailored services"
-            title="Mỗi dịch vụ nên giúp khách hàng hiểu rất nhanh khi nào nó phù hợp và họ sẽ nhận được điều gì."
-            description="Thay vì lặp một cấu trúc block giống nhau, chúng tôi trình bày dịch vụ như các điểm vào khác nhau cho cùng một hệ tư vấn cao cấp."
+            title="Mỗi dịch vụ nên giúp khách hàng hiểu rất nhanh khi nào nó phù hợp, họ nhận được gì và bước tiếp theo là gì."
+            description="Thay vì lặp cùng một cấu trúc block, chúng tôi trình bày dịch vụ như các lối vào khác nhau cho cùng một hệ tư vấn cao cấp."
             align="left"
           />
         </div>
 
-        <div className="mt-12 grid gap-8">
+        <div className="mt-14 grid gap-12">
           {services.map((service, index) => (
             <article
               key={service.slug}
-              className="luxury-card grid gap-6 overflow-hidden p-4 md:p-5 lg:grid-cols-[0.52fr_0.48fr]"
+              className="grid gap-8 lg:grid-cols-[0.54fr_0.46fr] lg:items-center"
             >
               <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="relative min-h-[20rem] overflow-hidden rounded-[1.8rem]">
+                <div className="relative min-h-[26rem] overflow-hidden rounded-[2.2rem] shadow-[0_24px_70px_rgba(22,18,14,0.1)]">
                   <Image
                     src={service.image}
                     alt={service.name}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    sizes="(max-width: 1024px) 100vw, 46vw"
                     className="object-cover"
                   />
                 </div>
               </div>
+
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                 <p className="section-kicker">{service.slug.replaceAll("-", " ")}</p>
-                <h2 className="mt-4 font-serif text-[3rem] leading-none text-[var(--color-charcoal)]">
+                <h2 className="mt-4 max-w-2xl font-serif text-[3.4rem] leading-[0.98] text-[var(--color-charcoal)]">
                   {service.name}
                 </h2>
-                <p className="mt-4 max-w-xl text-sm leading-8 text-[var(--color-muted)]">
+                <p className="mt-5 max-w-xl text-sm leading-8 text-[var(--color-muted)]">
                   {service.description}
                 </p>
 
-                <div className="mt-6 grid gap-4 md:grid-cols-3">
-                  <div>
+                <div className="mt-8 grid gap-4 md:grid-cols-3">
+                  <div className="rounded-[1.6rem] bg-[rgba(255,255,255,0.32)] p-5">
                     <p className="section-kicker">Khi nào nên chọn</p>
                     <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
                       {service.suitedFor.slice(0, 2).map((item) => (
@@ -61,7 +62,7 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </div>
-                  <div>
+                  <div className="rounded-[1.6rem] bg-[rgba(255,255,255,0.24)] p-5">
                     <p className="section-kicker">Bạn nhận được</p>
                     <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
                       {service.deliverables.slice(0, 2).map((item) => (
@@ -69,13 +70,11 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <p className="section-kicker">Kết quả</p>
-                    <ul className="mt-3 space-y-2 text-sm leading-7 text-[var(--color-charcoal)]">
-                      {service.outcomes.slice(0, 2).map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
+                  <div className="luxury-card rounded-[1.6rem] p-5">
+                    <p className="section-kicker">Bước tiếp theo</p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-charcoal)]">
+                      Gửi brief công trình để studio đề xuất buổi làm việc đầu tiên phù hợp.
+                    </p>
                   </div>
                 </div>
 
@@ -100,7 +99,7 @@ export default function ServicesPage() {
         items={services.flatMap((service) => service.faqs)}
       />
 
-      <section className="section-shell grid gap-8 pb-24 pt-6 lg:grid-cols-[1.08fr_0.92fr]">
+      <section className="section-shell grid gap-8 pb-24 pt-6 lg:grid-cols-[1.05fr_0.95fr]">
         <ContactCta />
         <ConsultationForm />
       </section>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-shell section-pad grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="section-shell section-pad grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
         <div className="space-y-6">
           <SectionHeading
             eyebrow="Atelier profile"
@@ -20,10 +20,8 @@ export default function AboutPage() {
             align="left"
           />
           <p className="max-w-xl text-sm leading-8 text-[var(--color-muted)]">
-            Điều tạo nên khác biệt không nằm ở việc dùng nhiều vật liệu đắt, mà ở
-            cách chọn đúng tỷ lệ, đúng mức hoàn thiện và đúng cảm giác sử dụng cho
-            từng nhóm khách hàng. Đây là lý do chúng tôi không trình bày thương hiệu
-            như một danh sách thành tích, mà như một phương pháp làm việc.
+            Khác biệt không nằm ở việc dùng nhiều vật liệu đắt, mà ở cách chọn đúng tỷ lệ,
+            đúng mức hoàn thiện và đúng cảm giác sử dụng cho từng nhóm khách hàng.
           </p>
         </div>
         <div className="luxury-frame relative min-h-[38rem] overflow-hidden rounded-[2.6rem]">
@@ -48,11 +46,14 @@ export default function AboutPage() {
             body: "Những chi tiết quan trọng có thể được hiệu chỉnh ở mức hoàn thiện thật, thay vì dừng ở bản vẽ đẹp.",
           },
           {
-            title: "Làm việc theo chiều sâu thay vì phô diễn",
-            body: "Chúng tôi tránh lối khoe khoang rẻ tiền. Thương hiệu nên được cảm từ cách nói, cách làm và chất lượng công trình.",
+            title: "Sang trọng không phô trương",
+            body: "Chúng tôi ưu tiên chiều sâu hoàn thiện, độ bền cảm xúc và trải nghiệm sống dài lâu hơn là hiệu ứng thị giác ngắn hạn.",
           },
-        ].map((item) => (
-          <article key={item.title} className="luxury-card rounded-[2rem] p-7">
+        ].map((item, index) => (
+          <article
+            key={item.title}
+            className={index === 1 ? "luxury-card rounded-[2rem] p-7" : "rounded-[2rem] border border-black/8 bg-[rgba(255,255,255,0.3)] p-7"}
+          >
             <h2 className="font-serif text-[2.2rem] leading-none text-[var(--color-charcoal)]">
               {item.title}
             </h2>
@@ -63,27 +64,27 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="section-shell section-pad grid gap-8 lg:grid-cols-[1.04fr_0.96fr]">
         <div className="luxury-card rounded-[2.2rem] p-8">
           <p className="section-kicker">Phương pháp làm việc</p>
-          <h2 className="mt-4 font-serif text-[3.4rem] leading-none text-[var(--color-charcoal)]">
+          <h2 className="mt-4 max-w-3xl font-serif text-[3.4rem] leading-[0.98] text-[var(--color-charcoal)]">
             Cân bằng giữa cảm xúc thẩm mỹ, công năng sống và khả năng thực thi.
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-8 text-[var(--color-muted)]">
-            Mỗi dự án được đặt trên ba lớp cùng lúc: người sống trong đó là ai,
-            không gian cần tạo ra cảm giác gì, và công trình sẽ được hiện thực ra
-            sao để không mất đi tinh thần ban đầu.
+            Mỗi dự án được đặt trên ba lớp cùng lúc: người sống trong đó là ai, không
+            gian cần tạo ra cảm giác gì, và công trình sẽ được hiện thực ra sao để không
+            mất đi tinh thần ban đầu.
           </p>
         </div>
         <div className="grid gap-4">
           {[
             "Tư duy biên tập giúp cắt bỏ những chi tiết không thực sự cần thiết.",
             "Vật liệu được chọn theo cách chúng phản ứng với ánh sáng và thời gian sử dụng.",
-            "Quy trình rõ giúp khách hàng cảm thấy an tâm ngay cả khi dự án kéo dài nhiều tháng.",
+            "Quy trình rõ giúp khách hàng an tâm ngay cả với các dự án kéo dài nhiều tháng.",
           ].map((item) => (
             <div
               key={item}
-              className="rounded-[1.8rem] border border-black/8 bg-[var(--color-panel-strong)] p-6 text-sm leading-7 text-[var(--color-muted)]"
+              className="rounded-[1.8rem] border border-black/8 bg-[rgba(255,255,255,0.28)] p-6 text-sm leading-7 text-[var(--color-muted)]"
             >
               {item}
             </div>
